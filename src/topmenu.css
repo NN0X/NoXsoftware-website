@@ -1,0 +1,28 @@
+﻿.TopMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #330b5f;
+    height: 50px;
+}
+
+.TopMenu a {
+    font-size: 30px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.TopMenu a:hover {
+    background-color: #3d0d71;
+    color: #fff;
+    height: 100%;
+}
+
+.TopMenu a.current {
+    background-color: #6215b4;
+    color: #fff;
+    height: 100%;
+}

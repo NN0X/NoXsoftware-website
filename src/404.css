@@ -1,0 +1,42 @@
+﻿.NotFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 150px;
+    color: #666;
+}
+
+body{
+    background-color: #e5d1ff;
+}
+
+.Text {
+    display: flex;
+    flex-direction: column;
+}
+  
+.NotFound h1 {
+    padding-top: 120px;
+    font-size: 10em;
+    margin: 0;
+}
+
+.NotFound p {
+    margin-top: -20px;
+    font-size: 2em;
+}
+
+.GIF-container {
+    display: flex;
+    background-color: #f0f0f0;
+    border: 1px solid #666;
+    padding-left: 200px; /* Adjust the value as needed */
+    border-radius: 20px;
+    height: 480px;
+}
+  
+.GIF {
+    width: 500px;
+    max-width: 100%;
+}

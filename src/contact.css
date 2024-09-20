@@ -1,0 +1,22 @@
+﻿.GitHub, .Email {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.GitHub img, .Email img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.GitHub h1, .Email h1 {
+    font-size: 1em;
+    margin: 0;
+    color: #333;
+}
+
+.GitHub a, .Email a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
