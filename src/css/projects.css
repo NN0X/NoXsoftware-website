@@ -1,1 +1,16 @@
-﻿
+﻿.ProjectList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.Project {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #f0f0f0;
+}
