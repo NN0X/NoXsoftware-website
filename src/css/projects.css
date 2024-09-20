@@ -1,22 +1,83 @@
-﻿.ProjectList {
-  display: grid;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
+﻿.Projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4%;
 }
 
 .Project {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #666;
-  border-radius: 10px;
-  width: 300px;
-  background-color: #f0f0f0;
+  position: relative;
+  background-color: #330b5f;
+  width: 250px;
+  height: 250px;
+  margin: 1px;
+  border-radius: 5px;
+  border: 2px solid #330b5f;
+  perspective: 1000px;
 }
 
-.ProjectImage {
-  width: 100%;
+.Project:hover {
+  transition: background-color 0.5s ease;
+  background-color: #fff;
+}
+
+.Project a {
+  display: grid;
+  text-decoration: none;
+}
+
+.Project img {
+  grid-column: 1;
+  grid-row: 1;
+  width: 200px;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.Project h2 {
+  color: #fff;
+  margin: 0px;
+  text-align: center;
+}
+
+.Project p {
+  grid-column: 1;
+  grid-row: 1;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.Project:hover img {
+  grid-column: 1;
+  grid-row: 1;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.Project:hover h2 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+
+.Project:hover p {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 40px;
+  font-size: 1.5em;
   height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+  text-align: center;
+  white-space: normal;
+  color: #000;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
+  transform: rotateY(0deg);
+  opacity: 1;
 }
