@@ -19,9 +19,9 @@
       <a href="/html/contact">Contact</a>
     </div>
     
-    <div class="Projects" id="projects">
-      <div class="Project" onclick="moveToSide(this)">
-        <a href="/projects/brutus">
+    <div class="Projects">
+      <div class="Project" id="brutus" onclick="moveTo('brutus', 500, 30, 100)">
+        <a href="javascript:delay('/html/proj/brutus', 500)">
           <img src="/resources/images/brutus.png" alt="Brutus" />
           <h2>Brutus</h2>
           <p>Simple symmetric encryption tool with my custom algorithm</p>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <script src="/js/projects.js"></script>
+    <script src="/js/utility.js"></script>
 
   </body>
 </html>
