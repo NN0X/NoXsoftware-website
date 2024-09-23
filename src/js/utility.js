@@ -1,3 +1,11 @@
+function refresh() {
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+}
+
 function delay(url, time) 
 {
         // time in milliseconds
