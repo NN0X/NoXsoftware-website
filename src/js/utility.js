@@ -1,5 +1,6 @@
 function delay(url, time) 
 {
+        // time in milliseconds
         setTimeout( function() { window.location = url }, time );
 }
 

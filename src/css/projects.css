@@ -1,8 +1,18 @@
-﻿.Projects {
+﻿@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 4%;
+  animation: fadeIn 1s ease;
 }
 
 .Project {
@@ -33,19 +43,31 @@
   width: 200px;
   margin-left: 20px;
   align-items: center;
+  transition: transform 1s ease, opacity 0.25s ease-in-out 0.25s;
 }
 
 .Project h2 {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 200px;
   color: #fff;
   margin: 0px;
   text-align: center;
+  transition: transform 1s ease, opacity 0.25s ease-in-out 0.25s;
 }
 
 .Project p {
   grid-column: 1;
   grid-row: 1;
+  margin: 40px;
+  font-size: 1.5em;
+  height: 200px;
+  text-align: center;
+  white-space: normal;
+  color: #000;
   transform: rotateY(180deg);
   opacity: 0;
+  transition: transform 0.5s ease, opacity 0.25s ease-in-out 0s;
 }
 
 .Project:hover img {
@@ -60,7 +82,6 @@
 .Project:hover h2 {
   grid-column: 1;
   grid-row: 1;
-  margin-top: 200px;
   transform-style: preserve-3d;
   transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
   transform: rotateY(180deg);
@@ -81,4 +102,45 @@
   transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
   transform: rotateY(0deg);
   opacity: 1;
+}
+
+.Project.disable-hover {
+  pointer-events: none;
+}
+
+.Projects.on-close-left {
+  transition: transform 5s ease;
+  transform: translateX(-10000px);
+}
+
+.Projects.on-close-right {
+  transition: transform 5s ease;
+  transform: translateX(10000px);
+}
+
+.Menu.on-close a {
+  background-color: #3d0d71;
+  color: #fff;
+  height: 100%;
+}
+
+.Menu.disable-hover {
+  pointer-events: none;
+}
+
+.Current.on-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Current.on-close a {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #330b5f;
 }

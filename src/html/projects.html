@@ -2,9 +2,16 @@
 <html>
   <head>
     <title>NoXsoftware</title>
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="Personal website">
+    <meta name="keywords" content="programming, C++, C">
+    <meta name="author" content="NoX">
+    <meta viewport="width=device-width, initial-scale=1.0"/>
+
     <link
       rel="icon"
-      href="/resources/images/logo_wb.png"
+      href="/resources/images/logo_white_smooth.png"
       type="/image/favicon.ico"
     />
     <link rel="stylesheet" href="/css/projects.css" />
@@ -13,22 +20,30 @@
     <link rel="stylesheet" href="/css/topmenu.css" />
   </head>
   <body>
-    <div class="TopMenu">
-      <a href="/">Home</a>
-      <a href="/html/projects" class="current">Projects</a>
-      <a href="/html/contact">Contact</a>
+    <div class="TopMenu"">
+      <div class="Menu" id="home" onclick="onClose('home'); onClose('current'); disableHover('contact'); onCloseLeft('projects')">
+        <a href="javascript:delay('/', 700)">Home</a>
+      </div>
+      <div class="Current" id="current">
+        <a>Projects</a>
+      </div>
+      <div class="Menu" id="contact" onclick="onClose('contact'); onClose('current'); disableHover('home'); onCloseRight('projects')">
+        <a href="javascript:delay('/html/contact', 700)">Contact</a>
+      </div>
     </div>
-    
-    <div class="Projects">
-      <div class="Project" id="brutus" onclick="moveTo('brutus', 500, 30, 100)">
+
+    <div class="Projects" id="projects">
+      <div class="Project" id="brutus" onclick="disableHover('brutus'); moveTo('brutus', 500, 30, 100)">
         <a href="javascript:delay('/html/proj/brutus', 500)">
           <img src="/resources/images/brutus.png" alt="Brutus" />
           <h2>Brutus</h2>
           <p>Simple symmetric encryption tool with my custom algorithm</p>
         </a>
       </div>
+
     </div>
 
+    <script src="/js/projects.js"></script>
     <script src="/js/utility.js"></script>
 
   </body>
