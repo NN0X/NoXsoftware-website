@@ -1,9 +1,8 @@
-function refresh() {
-    window.onpageshow = function(event) {
-        if (event.persisted) {
-            window.location.reload();
-        }
-    };
+function preventCaching() {
+        history.pushState(null, document.title, location.href);
+        window.addEventListener('popstate', function() {
+            history.pushState(null, document.title, location.href);
+        });
 }
 
 function delay(url, time) 
