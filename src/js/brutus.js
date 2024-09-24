@@ -1,8 +1,8 @@
 function runBrutus(key, message)
 {
         // get the key and message from the user
-        var key = document.getElementById("key").value;
-        var message = document.getElementById("message").value;
+        var key = document.getElementById(key).value;
+        var message = document.getElementById(message).value;
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/php/brutus.php", true);
