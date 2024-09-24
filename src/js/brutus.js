@@ -58,3 +58,9 @@ function runBrutus(keyId, messageId)
                 }
         }
 }
+
+function onEnter(keyId, messageId)
+{
+        if (window.event.keyCode == 13)
+                runBrutus(keyId, messageId);
+}
