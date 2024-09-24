@@ -23,15 +23,15 @@
 
     <div class="TopMenu"">
       <div class="Menu" id="home" onclick="onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects');
-                                           disableHover('project'); onClose('info'); onClose('github')">
+                                           disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
         <a href="javascript:delay('/', 1400)">Home</a>
       </div>
       <div class="Menu" id="projects" onclick="onClose('projects'); onClose('project'); disableHover('home'); disableHover('contact');
-                                               disableHover('project'); onClose('info'); onClose('github')">
+                                               disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
         <a href="javascript:delay('/html/projects', 1400)">Projects</a>
       </div>
       <div class="Menu" id="contact" onclick="onClose('contact'); onClose('project'); disableHover('home'); disableHover('projects');
-                                              disableHover('project'); onClose('info'); onClose('github')">
+                                              disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
         <a href="javascript:delay('/html/contact', 1400)">Contact</a>
       </div>
     </div>
@@ -44,10 +44,18 @@
           <h1>Brutus on GitHub</h1>
         </a>
       </div>
+      <div class="Program" id="program">
+        <h2>Encryption test</h2>
+        <input type="text" id="key" placeholder="Enter key" onkeydown="onEnter('key', 'message')"/>
+        <input type="text" id="message" placeholder="Enter text" onkeydown="onEnter('key', 'message')"/>
+        <button onclick="runBrutus('key','message')"><p1>Encrypt</p1></button>
+        <div class="Output"><a id="output"></a></div>
+      </div>
     </div>
 
     <a href="javascript:delay('/html/projects', 1400)">
-      <div class="Project" id="project" onclick="disableHover('project'); onClose('project'); onClose('info'); onClose('github')">
+      <div class="Project" id="project" onclick="disableHover('project'); onClose('project'); onClose('info'); onClose('github');
+                                                 onClose('program')">
         <div class="Card">
           <img src="/resources/images/brutus.png" alt="Brutus" />
           <h2>Brutus</h2>
@@ -56,6 +64,7 @@
       </div>
     </a>
 
+    <script src="/js/brutus.js"></script>
     <script src="/js/projects.js"></script>
     <script src="/js/utility.js"></script>
 

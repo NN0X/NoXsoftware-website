@@ -52,6 +52,30 @@
   }
 }
 
+@keyframes pShow {
+  0% {
+    transform: translateX(-250px);
+  }
+  15% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes pHide {
+  0% {
+    transform: translateX(0px);
+  }
+  15% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-250px);
+  }
+}
+
 .ProjectInfo {
   background-color: #a3a3a3ac;
   position: fixed;
@@ -91,6 +115,85 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+}
+
+.Program {
+  position: fixed;
+  display: grid;
+  align-items: center;
+  top: 100px;
+  left: 300px;
+  animation: pShow 1s ease;
+}
+
+.Program h2 {
+  background-color: #330b5f;
+  border: 2px solid #252425;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+.Program input {
+  text-align: center;
+  background-color: #330b5f;
+  color: #fff;
+  border: 1px solid #330b5f;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 1px;
+  caret-color: #fff;
+  outline: 1px solid #000;
+}
+
+.Program button {
+  text-align: center;
+  background-color: #330b5f;
+  color: #fff;
+  border: 1px solid #330b5f;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 1px;
+  cursor: pointer;
+}
+
+.Program button:hover {
+  background-color: #5c268b;
+}
+
+.Program p1 {
+  font-size: 1em;
+  text-align: center;
+  color: #fff;
+}
+
+.Program button:active {
+  background-color: #330b5f;
+}
+
+.Output {
+  position: relative;
+  width: 200px;
+  height: 106px;
+  top: 2px;
+  padding-top: 0px;
+  background-color: #fff;
+  border: 2px solid #330b5f;
+  border-radius: 5px;
+}
+
+.Output a {
+  color: #000;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .Project {
@@ -204,6 +307,12 @@
 
 .GitHub.on-close {
   animation: ghHide 1s ease;
+  transition-delay: 0.75s;
+  opacity: 0;
+}
+
+.Program.on-close {
+  animation: pHide 1s ease;
   transition-delay: 0.75s;
   opacity: 0;
 }
