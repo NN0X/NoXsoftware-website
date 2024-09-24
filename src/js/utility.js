@@ -1,8 +1,7 @@
 function preventCaching() {
-        history.pushState(null, document.title, location.href);
-        window.addEventListener('popstate', function() {
-            history.pushState(null, document.title, location.href);
-        });
+        if(performance.navigation.type == 2){
+                location.reload(true);
+        }
 }
 
 function delay(url, time) 
