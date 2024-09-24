@@ -21,8 +21,6 @@
   </head>
   <body>
 
-    <script src="/js/utility.js">preventCaching();</script>
-
     <div class="TopMenu"">
       <div class="Menu" id="home" onclick="onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects');
                                            disableHover('project'); onClose('info'); onClose('github')">
@@ -60,6 +58,12 @@
 
     <script src="/js/projects.js"></script>
     <script src="/js/utility.js"></script>
+
+    <script>
+      window.onload = function() {
+        reloadPersisted();
+      };
+    </script>
 
   </body>
 </html>
