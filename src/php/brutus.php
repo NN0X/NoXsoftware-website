@@ -1,7 +1,21 @@
 <?php
+
+function sanitizeInput($data) 
+{
+	return htmlspecialchars(strip_tags($data), ENT_QUOTES, 'UTF-8');
+}
+
+function sanitizeOutput($data) 
+{
+	return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+}
+
 function runBrutus($key, $message)
 {
-	$output = shell_exec('echo "123");
+	$key = sanitizeInput($key);
+	$message = sanitizeInput($message);
+	$output = shell_exec('./../exec/brutus "$message" "$key"');
+	$output = sanitizeOutput($output);
 	return $output;
 }
 
