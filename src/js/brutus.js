@@ -11,6 +11,7 @@ function runBrutus(key, message)
         xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                         document.getElementById("output").innerHTML = xhr.responseText;
+                        console.log(xhr.responseText);
                 }
         }
 }
