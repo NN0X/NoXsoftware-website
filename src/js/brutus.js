@@ -1,7 +1,7 @@
-function runBrutus(key, message)
+function runBrutus(keyId, messageId)
 {
-        const key = document.getElementById(key).value;
-        const message = document.getElementById(message).value;
+        const key = document.getElementById(keyId).value;
+        const message = document.getElementById(messageId).value;
 
         if (key == "" || message == "")
         {
