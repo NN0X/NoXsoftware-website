@@ -2,7 +2,7 @@ function runBrutus(key, message)
 {
         // call php function to run brutus
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "brutus.php", true);
+        xhr.open("POST", "/php/brutus.php", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send("key=" + key + "&message=" + message);
         xhr.onreadystatechange = function() {
