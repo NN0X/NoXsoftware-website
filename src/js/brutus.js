@@ -3,27 +3,40 @@ function runBrutus(keyId, messageId)
         const key = document.getElementById(keyId).value;
         const message = document.getElementById(messageId).value;
 
-        if (key == "" || message == "")
+        if (key == "" && message == "")
         {
-                document.getElementById("output").innerHTML = "Please enter a key and message.";
+                document.getElementById("output").innerText = "Please enter key and message.";
                 return;
         }
 
+        if (key == "" && message != "")
+        {
+                document.getElementById("output").innerText = "Please enter key.";
+                return;
+        }
+
+        if (message == "" && key != "")
+        {
+                document.getElementById("output").innerText = "Please enter message.";
+                return;
+        }
+
+
         if (key.length < 3)
         {
-                document.getElementById("output").innerHTML = "The key must be at least 3 characters.";
+                document.getElementById("output").innerText = "The key must be at least 3 characters.";
                 return;
         }
 
         if (key.length > 50)
         {
-                document.getElementById("output").innerHTML = "The key must be at most 50 characters.";
+                document.getElementById("output").innerText = "The key must be at most 50 characters.";
                 return;
         }
 
         if (message.length > 50)
         {
-                document.getElementById("output").innerHTML = "The message must be at most 50 characters.";
+                document.getElementById("output").innerText = "The message must be at most 50 characters.";
                 return;
         }
 
@@ -37,11 +50,11 @@ function runBrutus(keyId, messageId)
                 {
                         if (xhr.responseText == "")
                         {
-                                document.getElementById("output").innerHTML = "";
+                                document.getElementById("output").innerText = "";
                                 return;
                         }
                         const output = xhr.responseText.slice(0, -1);
-                        document.getElementById("output").innerHTML = xhr.responseText;
+                        document.getElementById("output").innerText = xhr.responseText;
                 }
         }
 }
