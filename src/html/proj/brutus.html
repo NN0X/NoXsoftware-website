@@ -21,18 +21,18 @@
   </head>
   <body>
 
-    <div class="TopMenu"">
-      <div class="Menu" id="home" onclick="onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects');
+    <div class="TopMenu">
+      <div class="Menu" id="home" onclick="delayOnClick(event, '/', 1400); onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects');
                                            disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
-        <a href="javascript:delay('/', 1400)">Home</a>
+        <a href="/">Home</a>
       </div>
-      <div class="Menu" id="projects" onclick="onClose('projects'); onClose('project'); disableHover('home'); disableHover('contact');
+      <div class="Menu" id="projects" onclick="delayOnClick(event, '/html/projects', 1400); onClose('projects'); onClose('project'); disableHover('home'); disableHover('contact');
                                                disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
-        <a href="javascript:delay('/html/projects', 1400)">Projects</a>
+        <a href="/html/projects.html">Projects</a>
       </div>
-      <div class="Menu" id="contact" onclick="onClose('contact'); onClose('project'); disableHover('home'); disableHover('projects');
+      <div class="Menu" id="contact" onclick="delayOnClick(event, '/html/contact', 1400); onClose('contact'); onClose('project'); disableHover('home'); disableHover('projects');
                                               disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
-        <a href="javascript:delay('/html/contact', 1400)">Contact</a>
+        <a href="/html/contact">Contact</a>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <a href="javascript:delay('/html/projects', 1400)">
+    <a href="/html/projects" onclick="delayOnClick(event, '/html/projects', 1400)">
       <div class="Project" id="project" onclick="disableHover('project'); onClose('project'); onClose('info'); onClose('github');
                                                  onClose('program')">
         <div class="Card">
