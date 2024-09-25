@@ -132,6 +132,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 0px;
+  margin-bottom: 2px;
   color: #e6e6e6;
   text-align: center;
 }
@@ -143,7 +144,7 @@
   border: 1px solid #330b5f;
   border-radius: 10px;
   padding: 5px;
-  margin: 1px;
+  margin: 2px;
   caret-color: #fff;
   outline: 1px solid #000;
 }
@@ -176,7 +177,7 @@
 .Output {
   position: relative;
   width: 200px;
-  height: 106px;
+  height: 100px;
   top: 2px;
   padding-top: 0px;
   background-color: #fff;

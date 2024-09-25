@@ -12,6 +12,19 @@ function delay(url, time)
         setTimeout( function() { window.location = url }, time );
 }
 
+function delayOnClick(event, url, time)
+{
+        if (event.ctrlKey || event.metaKey || event.button == 1)
+        {
+                return;
+        }
+        else
+        {
+                event.preventDefault();
+                delay(url, time);
+        }
+}
+
 function moveTo(id, time, targetX, targetY)
 {
         const div = document.getElementById(id);
