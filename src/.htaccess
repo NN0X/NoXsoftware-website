@@ -4,6 +4,7 @@ RewriteCond %{REQUEST_URI} !\.html$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteRule ^c$ /html/c [L,R=301]
 
 Options -Indexes
 
