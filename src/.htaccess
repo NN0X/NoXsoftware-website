@@ -4,10 +4,10 @@ RewriteCond %{REQUEST_URI} !\.html$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
-RewriteRule ^c$ /eggs/c [L,R=301]
-RewriteRule ^c\+\+$ /eggs/c++ [L,R=301]
-RewriteRule ^linux$ /eggs/linux [L,R=301]
-RewriteRule ^python$ /eggs/python [L,R=301]
+RewriteRule ^c$ /eggs/K/c [L,R=301]
+RewriteRule ^c\+\+isthebest$ /eggs/Kem/c++ [L,R=301]
+RewriteRule ^linux\>windowsallday$ /eggs/Bwz1l/linux [L,R=301]
+RewriteRule ^pythonistoobadforbeingthisuseful$ /eggs/\;gtAu\@/python [L,R=301]
 
 Options -Indexes
 
