@@ -17,7 +17,7 @@ function runBrutus($message)
         return $output;
 }
 
-if (isset($_POST['key']) && isset($_POST['message']))
+if (isset($_POST['message']))
 {
         echo runCicero($_POST['message']);
 }
