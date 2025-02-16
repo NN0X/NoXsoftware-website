@@ -12,7 +12,7 @@ function sanitizeOutput($data)
 function runCicero($message)
 {
         $message = escapeshellarg(sanitizeInput($message));
-        $output = shell_exec("./../exec/cicero -i $message");
+        $output = shell_exec("./../exec/cicero -i $message '../exec/dictionaries/2^16.tok'");
         $output = sanitizeOutput($output);
         return $output;
 }
