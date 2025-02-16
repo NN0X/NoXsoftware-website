@@ -99,7 +99,6 @@
     width: auto;
 }
 
-
 .GitHub img{
     width: 80px;
     margin-right: 10px;
@@ -164,12 +163,6 @@
   background-color: #5c268b;
 }
 
-.Program p1 {
-  font-size: 1em;
-  text-align: center;
-  color: #fff;
-}
-
 .Program button:active {
   background-color: #330b5f;
 }
@@ -228,6 +221,7 @@
 .Project img {
   grid-column: 1;
   grid-row: 1;
+  padding-top: 40px;
   width: 200px;
   margin-left: 20px;
   align-items: center;
@@ -244,50 +238,9 @@
   transition: transform 1s ease, opacity 0.25s ease-in-out 0.25s;
 }
 
-.Project p {
-  grid-column: 1;
-  grid-row: 1;
-  padding-top: 80px;
-  font-size: 1.5em;
-  text-align: center;
-  white-space: normal;
-  color: #000;
-  transform: rotateY(180deg);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.25s ease-in-out 0s;
-}
-
-.Project:hover img {
-  grid-column: 1;
-  grid-row: 1;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-.Project:hover h2 {
-  grid-column: 1;
-  grid-row: 1;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-
-.Project:hover p {
-  grid-column: 1;
-  grid-row: 1;
-  padding-top: 80px;
-  font-size: 1.5em;
-  text-align: center;
-  white-space: normal;
-  color: #000;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(0deg);
-  opacity: 1;
+.Project h2:hover { 
+  transition: color 0.5s ease;
+  color: #2c2c2c;
 }
 
 .Project.disable-hover {
