@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NoXsoftware</title>
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="Personal website">
+    <meta name="keywords" content="programming, C++, C">
+    <meta name="author" content="NoX">
+    <meta viewport="width=device-width, initial-scale=1.0"/>
+
+    <link
+      rel="icon"
+      href="/resources/images/logo_white_smooth.png"
+      type="/image/favicon.ico"
+    />
+    <link rel="stylesheet" href="/css/proj/cicero.css" />
+    <link rel="stylesheet" href="/css/globalstyle.css" />
+    <link rel="stylesheet" href="/css/workinprogress.css" />
+    <link rel="stylesheet" href="/css/topmenu.css" />
+  </head>
+  <body>
+
+    <div class="TopMenu">
+      <div class="Menu" id="home" onclick="delayOnClick(event, '/', 1400); onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects');
+                                           disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/">Home</a>
+      </div>
+      <div class="Menu" id="projects" onclick="delayOnClick(event, '/html/projects', 1400); onClose('projects'); onClose('project'); disableHover('home'); disableHover('contact');
+                                               disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/html/projects.html">Projects</a>
+      </div>
+      <div class="Menu" id="contact" onclick="delayOnClick(event, '/html/contact', 1400); onClose('contact'); onClose('project'); disableHover('home'); disableHover('projects');
+                                              disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/html/contact">Contact</a>
+      </div>
+    </div>
+
+
+    <div class="ProjectInfo" id="info">
+      <div class="GitHub" id="github">
+        <a href="https://github.com/NN0X/Cicero-Tokenizer" target="_blank">
+          <img src="/resources/images/github-mark.png" alt="GitHub" />
+          <h1>Cicero on GitHub</h1>
+        </a>
+      </div>
+      <div class="Program" id="program">
+        <h2>Tokenizer test</h2>
+        <input type="text" id="message" placeholder="Enter text" onkeydown="onEnter('message')"/>
+        <button onclick="runCicero('message')"><p1>Tokenize</p1></button>
+        <div class="Output"><a id="output"></a></div>
+      </div>
+    </div>
+
+    <a href="/html/projects" onclick="delayOnClick(event, '/html/projects', 1400)">
+      <div class="Project" id="project" onclick="disableHover('project'); onClose('project'); onClose('info'); onClose('github');
+                                                 onClose('program')">
+        <div class="Card">
+          <img src="/resources/images/cicero.png" alt="Cicero" />
+          <h2>Cicero</h2>          
+        </div>
+      </div>
+    </a>
+
+    <script src="/js/cicero.js"></script>
+    <script src="/js/projects.js"></script>
+    <script src="/js/utility.js"></script>
+
+    <script>
+      window.onload = function() {
+        reloadPersisted();
+      };
+    </script>
+
+  </body>
+</html>

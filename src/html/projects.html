@@ -1,58 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
-    <title>NoXsoftware</title>
 
-    <meta charset="UTF-8" />
-    <meta name="description" content="Personal website">
-    <meta name="keywords" content="programming, C++, C">
-    <meta name="author" content="NoX">
-    <meta viewport="width=device-width, initial-scale=1.0"/>
+<head>
+  <title>NoXsoftware</title>
 
-    <link
-      rel="icon"
-      href="/resources/images/logo_white_smooth.png"
-      type="/image/favicon.ico"
-    />
-    <link rel="stylesheet" href="/css/projects.css" />
-    <link rel="stylesheet" href="/css/globalstyle.css" />
-    <link rel="stylesheet" href="/css/workinprogress.css" />
-    <link rel="stylesheet" href="/css/topmenu.css" />
-  </head>
-  <body>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Personal website">
+  <meta name="keywords" content="programming, C++, C">
+  <meta name="author" content="NoX">
+  <meta viewport="width=device-width, initial-scale=1.0" />
 
-    <div class="TopMenu">
-      <div class="Menu" id="home" onclick="delayOnClick(event, '/', 700); onClose('home'); onClose('current'); disableHover('contact'); onCloseLeft('projects')">
-        <a href="/">Home</a>
-      </div>
-      <div class="Current" id="current">
-        <a>Projects</a>
-      </div>
-      <div class="Menu" id="contact" onclick="delayOnClick(event, '/html/contact', 700); onClose('contact'); onClose('current'); disableHover('home'); onCloseRight('projects')">
-        <a href="/html/contact">Contact</a>
-      </div>
+  <link rel="icon" href="/resources/images/logo_white_smooth.png" type="/image/favicon.ico" />
+  <link rel="stylesheet" href="/css/projects.css" />
+  <link rel="stylesheet" href="/css/globalstyle.css" />
+  <link rel="stylesheet" href="/css/workinprogress.css" />
+  <link rel="stylesheet" href="/css/topmenu.css" />
+</head>
+
+<body>
+
+  <div class="TopMenu">
+    <div class="Menu" id="home"
+      onclick="delayOnClick(event, '/', 700); onClose('home'); onClose('current'); disableHover('contact'); onCloseLeft('projects')">
+      <a href="/">Home</a>
+    </div>
+    <div class="Current" id="current">
+      <a>Projects</a>
+    </div>
+    <div class="Menu" id="contact"
+      onclick="delayOnClick(event, '/html/contact', 700); onClose('contact'); onClose('current'); disableHover('home'); onCloseRight('projects')">
+      <a href="/html/contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="Projects" id="projects">
+    <div class="Project" id="brutus"
+      onclick="delayOnClick(event, '/html/proj/brutus', 500); disableHover('brutus'); moveTo('brutus', 500, 30, 100)">
+      <a href="/html/proj/brutus">
+        <img src="/resources/images/brutus.png" alt="Brutus" />
+        <h2>Brutus</h2>
+      </a>
+    </div>
+    <div class="Project" id="cicero"
+      onclick="delayOnClick(event, '/html/proj/cicero', 500); disableHover('cicero'); moveTo('cicero', 500, 30, 100)">
+      <a href="/html/proj/cicero">
+        <img src="/resources/images/cicero.png" style="padding-top: 40px;" alt="Cicero" />
+        <h2>Cicero</h2>
+      </a>
     </div>
 
-    <div class="Projects" id="projects">
-      <div class="Project" id="brutus" onclick="delayOnClick(event, '/html/proj/brutus', 500); disableHover('brutus'); moveTo('brutus', 500, 30, 100)">
-        <a href="/html/proj/brutus">
-          <img src="/resources/images/brutus.png" alt="Brutus" />
-          <h2>Brutus</h2>
-          <p>Simple symmetric encryption tool with my custom algorithm</p>
-        </a>
-      </div>
+  </div>
 
-    </div>
+  <script src="/js/projects.js"></script>
+  <script src="/js/utility.js"></script>
 
-    <script src="/js/projects.js"></script>
-    <script src="/js/utility.js"></script>
-
-    <script>
-      window.onload = function() {
-        reloadPersisted();
-      };
-    </script>
+  <script>
+    window.onload = function () {
+      reloadPersisted();
+    };
+  </script>
 
 
-  </body>
+</body>
+
 </html>

@@ -4,13 +4,16 @@ RewriteCond %{REQUEST_URI} !\.html$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
-RewriteRule ^c$ /html/c [L,R=301]
+RewriteRule ^c$ /eggs/K/c [L,R=301]
+RewriteRule ^c\+\+isthebest$ /eggs/Kem/c++ [L,R=301]
+RewriteRule ^linux\>windowsallday$ /eggs/Bwz1l/linux [L,R=301]
+RewriteRule ^pythonistoobadforbeingthisuseful$ /eggs/\;gtAu\@/python [L,R=301]
 
 Options -Indexes
 
 ErrorDocument 404 /errors/404.html
 ErrorDocument 403 /errors/403.html
 
-<Limit POST>
-	Allow from all
-</Limit>
+<RequireAll>
+    Require all granted
+</RequireAll>

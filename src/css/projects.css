@@ -43,7 +43,6 @@
   width: 200px;
   margin-left: 20px;
   align-items: center;
-  transition: transform 1s ease, opacity 0.25s ease-in-out 0.25s;
 }
 
 .Project h2 {
@@ -53,55 +52,11 @@
   color: #fff;
   margin: 0px;
   text-align: center;
-  transition: transform 1s ease, opacity 0.25s ease-in-out 0.25s;
 }
 
-.Project p {
-  grid-column: 1;
-  grid-row: 1;
-  margin: 40px;
-  font-size: 1.5em;
-  height: 200px;
-  text-align: center;
-  white-space: normal;
-  color: #000;
-  transform: rotateY(180deg);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.25s ease-in-out 0s;
-}
-
-.Project:hover img {
-  grid-column: 1;
-  grid-row: 1;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-.Project:hover h2 {
-  grid-column: 1;
-  grid-row: 1;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-
-.Project:hover p {
-  grid-column: 1;
-  grid-row: 1;
-  margin: 40px;
-  font-size: 1.5em;
-  height: 200px;
-  text-align: center;
-  white-space: normal;
-  color: #000;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0s ease-in-out 0.15s;
-  transform: rotateY(0deg);
-  opacity: 1;
+.Project h2:hover { 
+  transition: color 0.5s ease;
+  color: #2c2c2c;
 }
 
 .Project.disable-hover {
