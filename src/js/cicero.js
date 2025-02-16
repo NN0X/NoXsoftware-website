@@ -33,7 +33,7 @@ function runCicero(messageId)
         }
 }
 
-function onEnter(keyId, messageId)
+function onEnter(messageId)
 {
         if (window.event.keyCode == 13)
                 runCicero(messageId);
