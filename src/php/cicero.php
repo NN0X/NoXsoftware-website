@@ -1,6 +1,7 @@
 <?php
 function sanitizeInput($data)
 {
+        $data = preg_replace('/[0-9\p{P}\p{S}]/u', '', $data);
         return htmlspecialchars(strip_tags($data), ENT_QUOTES, 'UTF-8');
 }
 
