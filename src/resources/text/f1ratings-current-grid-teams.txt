@@ -1,0 +1,11 @@
+No.	IMG	Name	Peak Rating	Current Rating	Last Change
+1	/resources/images/teams/redbull.jpg	Red Bull Racing	97.5	96.8	+0.1
+2	/resources/images/teams/mercedes.jpg	Mercedes-AMG	96.8	95.5	-0.2
+3	/resources/images/teams/ferrari.jpg	Ferrari	96.2	95.8	+0.4
+4	/resources/images/teams/mclaren.jpg	McLaren	95.5	94.7	+0.3
+5	/resources/images/teams/astonmartin.jpg	Aston Martin	94.8	93.5	-0.1
+6	/resources/images/teams/alpine.jpg	Alpine	93.5	92.2	+0.2
+7	/resources/images/teams/williams.jpg	Williams	92.8	91.5	+0.1
+8	/resources/images/teams/rb.jpg	RB	92.5	90.8	-0.3
+9	/resources/images/teams/sauber.jpg	Stake F1 Team	91.8	90.2	+0.1
+10	/resources/images/teams/haas.jpg	Haas	91.5	89.8	-0.2

@@ -1,0 +1,21 @@
+No.	IMG	Forename	Surname	Peak Rating	Current Rating	Last Change
+1	/resources/images/drivers/verstappen.jpg	Max	Verstappen	98.7	97.5	+0.2
+2	/resources/images/drivers/hamilton.jpg	Lewis	Hamilton	98.5	96.8	-0.1
+3	/resources/images/drivers/leclerc.jpg	Charles	Leclerc	97.2	96.5	+0.3
+4	/resources/images/drivers/russell.jpg	George	Russell	96.8	95.2	+0.1
+5	/resources/images/drivers/norris.jpg	Lando	Norris	96.5	95.8	+0.4
+6	/resources/images/drivers/sainz.jpg	Carlos	Sainz	96.0	94.7	-0.2
+7	/resources/images/drivers/alonso.jpg	Fernando	Alonso	97.8	95.3	+0.1
+8	/resources/images/drivers/piastri.jpg	Oscar	Piastri	95.5	94.2	+0.5
+9	/resources/images/drivers/stroll.jpg	Lance	Stroll	94.2	92.8	-0.3
+10	/resources/images/drivers/ocon.jpg	Esteban	Ocon	94.8	93.5	+0.2
+11	/resources/images/drivers/gasly.jpg	Pierre	Gasly	94.5	93.2	+0.1
+12	/resources/images/drivers/albon.jpg	Alexander	Albon	94.0	92.5	+0.3
+13	/resources/images/drivers/tsunoda.jpg	Yuki	Tsunoda	93.8	92.0	-0.1
+14	/resources/images/drivers/ricciardo.jpg	Daniel	Ricciardo	95.0	92.5	+0.4
+15	/resources/images/drivers/magnussen.jpg	Kevin	Magnussen	92.5	90.8	-0.2
+16	/resources/images/drivers/hulkenberg.jpg	Nico	Hülkenberg	93.2	91.5	+0.1
+17	/resources/images/drivers/bottas.jpg	Valtteri	Bottas	94.5	92.0	-0.3
+18	/resources/images/drivers/zhou.jpg	Guanyu	Zhou	92.0	90.5	+0.2
+19	/resources/images/drivers/sargeant.jpg	Logan	Sargeant	90.5	88.2	-0.4
+20	/resources/images/drivers/perez.jpg	Sergio	Pérez	95.5	93.8	-0.5

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Personal website" />
+    <meta name="keywords" content="programming, C++, C" />
+    <meta name="author" content="NoX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoXsoftware</title>
+
+    <link
+      rel="icon"
+      href="/resources/images/logo_white_smooth.png"
+      type="/image/favicon.ico"
+    />
+    <link rel="stylesheet" href="/css/proj/f1ratings.css" />
+    <link rel="stylesheet" href="/css/globalstyle.css" />
+    <link rel="stylesheet" href="/css/workinprogress.css" />
+    <link rel="stylesheet" href="/css/topmenu.css" />
+  </head>
+  <body>
+
+    <div class="TopMenu">
+      <div class="Menu" id="home" onclick="delayOnClick(event, '/', 1400); onClose('home'); onClose('project'); disableHover('contact'); disableHover('projects'); disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/">Home</a>
+      </div>
+      <div class="Menu" id="projects" onclick="delayOnClick(event, '/html/projects', 1400); onClose('projects'); onClose('project'); disableHover('home'); disableHover('contact'); disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/html/projects.html">Projects</a>
+      </div>
+      <div class="Menu" id="contact" onclick="delayOnClick(event, '/html/contact', 1400); onClose('contact'); onClose('project'); disableHover('home'); disableHover('projects'); disableHover('project'); onClose('info'); onClose('github'); onClose('program')">
+        <a href="/html/contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="ProjectInfo" id="info">
+      <div class="GitHub" id="github">
+        <a href="https://github.com/NN0X/F1Ratings" target="_blank">
+          <img src="/resources/images/github-mark.png" alt="GitHub" />
+          <h1>XRatings on GitHub</h1>
+        </a>
+      </div>
+
+      <div class="RatingSections">
+        <div class="section" id="current-grid-section">
+          <div class="header">Current grid</div>
+          <div class="content">
+            <div class="tables-container">
+              <div class="table-wrapper">
+                <h3>Teams</h3>
+                <div class="table-container" id="current-grid-teams"></div>
+                <div class="pagination">
+                  <button class="prev-btn">Prev</button>
+                  <span class="page-info">Page 1 of 1</span>
+                  <button class="next-btn">Next</button>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <h3>Drivers</h3>
+                <div class="table-container" id="current-grid-drivers"></div>
+                <div class="pagination">
+                  <button class="prev-btn">Prev</button>
+                  <span class="page-info">Page 1 of 1</span>
+                  <button class="next-btn">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="all-time-section">
+          <div class="header">All time</div>
+          <div class="content">
+            <div class="tables-container">
+              <div class="table-wrapper">
+                <h3>Teams</h3>
+                <div class="table-container" id="all-time-teams"></div>
+                <div class="pagination">
+                  <button class="prev-btn">Prev</button>
+                  <span class="page-info">Page 1 of 1</span>
+                  <button class="next-btn">Next</button>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <h3>Drivers</h3>
+                <div class="table-container" id="all-time-drivers"></div>
+                <div class="pagination">
+                  <button class="prev-btn">Prev</button>
+                  <span class="page-info">Page 1 of 1</span>
+                  <button class="next-btn">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="/html/projects" onclick="delayOnClick(event, '/html/projects', 1400)">
+      <div class="Project" id="project" onclick="disableHover('project'); onClose('project'); onClose('info'); onClose('github'); onClose('program')">
+        <div class="Card">
+          <img src="/resources/images/f1ratings.png" alt="XRating" />
+          <h2>F1 XRating</h2>
+        </div>
+      </div>
+    </a>
+
+    <script src="/js/f1ratings.js"></script>
+    <script src="/js/projects.js"></script>
+    <script src="/js/utility.js"></script>
+    <script>
+      window.onload = function() {
+        reloadPersisted();
+        initTables();
+      };
+    </script>
+  </body>
+</html>
