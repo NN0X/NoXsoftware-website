@@ -39,31 +39,56 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes sectionExpand {
+@keyframes sectionTop {
   0% { 
-    top: var(--original-top); 
-    left: 290px;
-    width: 250px;
-    height: 100px;
+    top: 100px;
   }
   100% { 
     top: 100px;
-    left: 30px;
-    width: calc(100% - 64px);
-    height: calc(100% - 134px);
+    width: calc(80%);
+    height: calc(85%);
   }
 }
 
-@keyframes sectionRetract {
+@keyframes sectionBottom {
+  0% {
+    top: 216px;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    width: calc(80%);
+    height: calc(85%);
+  }
+}
+
+@keyframes sectionTopCollapse {
   0% { 
     top: 100px;
-    left: 30px;
-    width: calc(100% - 64px);
-    height: calc(100% - 134px);
+    width: calc(80%);
+    height: calc(85%);
   }
   100% { 
-    top: var(--original-top); 
-    left: 290px;
+    top: 100px;
+    width: 250px;
+    height: 100px;
+  }
+}
+
+@keyframes sectionBottomCollapse {
+  0% {
+    top: 100px;
+    width: calc(80%);
+    height: calc(85%);
+  }
+  50% {
+    top: 100px;
+    width: 250px;
+    height: 100px;
+  }
+  100% {
+    top: 216px;
     width: 250px;
     height: 100px;
   }
@@ -220,8 +245,8 @@
 
 .RatingSections {
   position: absolute;
-  top: 100px;
-  left: 290px;
+  top: 0px;
+  left: 260px;
   display: grid;
   gap: 16px;
   width: 280px;
@@ -267,6 +292,7 @@
     max-height 0.5s ease 0.3s,
     padding 0.5s ease 0.3s;
   padding: 0;
+  cursor: default;
 }
 
 .section.expanded {
@@ -276,26 +302,38 @@
   border: 2px solid #330b5f;
   border-top-left-radius: 5px;
   overflow: auto;
-  animation: sectionExpand 0.5s ease forwards;
 }
 
-.section.collapsing {
-  animation: sectionRetract 0.5s ease forwards;
+.section-top.expanded {
+  animation: sectionTop 0.5s ease forwards;
+}
+
+.section-bottom.expanded {
+  animation: sectionBottom 0.5s ease forwards;
+}
+
+.section-top.collapsing {
+  animation: sectionTopCollapse 0.5s ease forwards;
+}
+
+.section-bottom.collapsing {
+  animation: sectionBottomCollapse 0.5s ease forwards;
 }
 
 .section.expanded .content {
   opacity: 1;
+  font-size: 0.9em;
   pointer-events: auto;
   max-height: none;
-  padding: 20px;
-  height: calc(100% - 40px);
+  padding: 10px;
+  height: calc(85%);
   display: block;
 }
 
 .section.expanded .tables-container {
   display: flex;
   gap: 20px;
-  height: calc(100% - 60px);
+  height: calc(90%);
 }
 
 .section.expanded .table-wrapper {
@@ -332,22 +370,12 @@
   cursor: not-allowed;
 }
 
-#info .section:not(.expanded) {
-  display: block;
-}
-
-#info.expanded .section:not(.expanded) {
-  display: none;
-}
-
 .section .content h3 {
   margin-top: 0;
   margin-bottom: 10px;
   color: #2c2c2c;
   font-size: 1.2em;
 }
-
-/* Table Styling */
 
 .table-container {
   overflow-y: auto;
@@ -369,8 +397,7 @@
   font-size: 0.9em;
 }
 
-.table-container th,
-.table-container td {
+.table-container th, .table-container td {
   padding: 0.75em 1em;
   border: 1px solid #ddd;
   background: none;
@@ -389,8 +416,8 @@
 }
 
 .table-container img {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
