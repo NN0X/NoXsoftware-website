@@ -39,50 +39,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes sectionTopExpand {
-  0% {
-    top: 100px;
-    width: 250px;
-    height: 100px;
-  }
-  100% {
-    top: 100px;
-    width: 80%;
-    height: 85%;
-  }
-}
-
-@keyframes sectionTopCollapse {
-  0% {
-    top: 100px;
-    width: 80%;
-    height: 85%;
-  }
-  100% {
-    top: 100px;
-    width: 250px;
-    height: 100px;
-  }
-}
-
-@keyframes sectionBottomExpand {
-  0% {
-    top: 216px;
-    width: 250px;
-    height: 100px;
-  }
-  50% {
-    top: 100px;
-    width: 250px;
-    height: 100px;
-  }
-  100% {
-    top: 100px;
-    width: 80%;
-    height: 85%;
-  }
-}
-
 .ProjectInfo {
   background-color: #a3a3a3ac;
   position: fixed;
@@ -283,7 +239,7 @@
 
 .section.expanded .content {
   opacity: 1;
-  font-size: 0.8em;
+  font-size: 0.6em;
   pointer-events: auto;
   max-height: none;
   padding: 10px;
@@ -314,6 +270,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5em;
   gap: 10px;
 }
 
@@ -339,6 +296,7 @@
 }
 
 .table-container {
+  font-size: 1.5em;
   overflow: hidden;
   background: #fff;
   border-radius: 4px;
@@ -351,14 +309,14 @@
   width: 100%;
   border-collapse: collapse;
   font-family: "Segoe UI", Roboto, sans-serif;
-  font-size: 0.9em;
 }
 
 .table-container th, .table-container td {
-  padding: 0.75em 1em;
+  padding: 0.75em 0.75em;
   border: 1px solid #ddd;
   background: none;
   text-align: left;
+  text-align: center;
 }
 
 .table-container th {
@@ -375,5 +333,5 @@
 .table-container img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  object-fit: scale-down;
 }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTables(); 
   initSectionToggle();
-  
+
   document.addEventListener('click', e => {
     if (e.target.classList.contains('prev-btn')) {
       handlePagination(e.target, -1);
@@ -94,27 +94,33 @@ function loadTableData(containerId, filePath) {
 
         cells.forEach((cell, idx) => {
           const td = document.createElement('td');
+          const trimmed = cell.trim();
+          const unquoted = trimmed.replace(/^["']|["']$/g, ''); // Strip outer quotes
 
           if (headers[idx].toLowerCase().includes('img')) {
-            const img = document.createElement('img');
-            img.src = cell.trim();
-            img.alt = headers[idx];
-            img.onerror = () => {
-              const fallback = document.createElement('div');
-              fallback.style.width = '80px';
-              fallback.style.height = '80px';
-              fallback.style.backgroundColor = '#fff';
-              fallback.style.display = 'flex';
-              fallback.style.alignItems = 'center';
-              fallback.style.justifyContent = 'center';
-              fallback.style.color = '#333';
-              fallback.style.fontSize = '12px';
-              fallback.textContent = 'No image';
-              img.replaceWith(fallback);
-            };
-            td.appendChild(img);
+            if (unquoted.startsWith('<')) {
+              td.innerHTML = unquoted;
+            } else {
+              const img = document.createElement('img');
+              img.src = unquoted;
+              img.alt = headers[idx];
+              img.onerror = () => {
+                const fallback = document.createElement('div');
+                fallback.style.width = '80px';
+                fallback.style.height = '80px';
+                fallback.style.backgroundColor = '#fff';
+                fallback.style.display = 'flex';
+                fallback.style.alignItems = 'center';
+                fallback.style.justifyContent = 'center';
+                fallback.style.color = '#333';
+                fallback.style.fontSize = '12px';
+                fallback.textContent = 'No image';
+                img.replaceWith(fallback);
+              };
+              td.appendChild(img);
+            }
           } else {
-            td.textContent = cell;
+            td.textContent = unquoted;
           }
 
           row.appendChild(td);
@@ -122,6 +128,7 @@ function loadTableData(containerId, filePath) {
 
         tbody.appendChild(row);
       }
+
       container.appendChild(table);
       table.appendChild(tbody);
       fixColumnWidths(table);

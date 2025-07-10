@@ -1,6 +1,5 @@
 No.	IMG	Forename	Surname	Peak Rating	Current Rating	Last Change
-1	/resources/images/drivers/verstappen.jpg	Max	Verstappen	98.7	97.5	+0.2
-2	/resources/images/drivers/hamilton.jpg	Lewis	Hamilton	98.5	96.8	-0.1
+1	"<a title="Steffen Prößdorf, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Formel_1,_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro.jpg"><img width="2048" alt="2024-08-25 Motorsport, Formel 1, Großer Preis der Niederlande 2024 STP 3973 by Stepro" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro.jpg/2048px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro.jpg?20240907221151"></a>"	Max	Verstappen	98.7	97.5	+0.2
 3	/resources/images/drivers/leclerc.jpg	Charles	Leclerc	97.2	96.5	+0.3
 4	/resources/images/drivers/russell.jpg	George	Russell	96.8	95.2	+0.1
 5	/resources/images/drivers/norris.jpg	Lando	Norris	96.5	95.8	+0.4
