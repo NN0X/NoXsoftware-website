@@ -8,7 +8,8 @@ import { bsod, reboot } from "../fx";
 import { isDir, isFile, listDir, repoOfDir, resolve } from "../fs";
 import { esc } from "../../../lib/esc";
 import { lev } from "../../../lib/lev";
-import { mockEncrypt, mockTokenize } from "../../../lib/mock";
+import { loadBrutus, tokenize } from "../demos";
+import { BRUTUS_MIN_KEY } from "../../../lib/cicero";
 import { MAN_PAGE, type StringKey } from "../../../lib/i18n";
 
 type Command = (args: string[]) => number | void;
@@ -457,9 +458,19 @@ function render(body: HTMLDivElement, w: Win): void
                                 print("usage: cicero &lt;text&gt;   e.g. " + runBtn("cicero great product", "cicero great product"));
                                 return 1;
                         }
-                        const toks = mockTokenize(text);
-                        print(toks.map((x) => "<span class=\"tk\">" + esc(x) + "</span>").join(""));
-                        print(esc(t("demo.tokens", { n: toks.length, c: text.length })), "f");
+                        const out = print(esc(t("demo.loading", { f: "cicero.wasm" })), "f");
+                        tokenize(text).then((r) =>
+                        {
+                                out.className = "";
+                                out.innerHTML = r.pieces.map((piece, i) => "<span class=\"tk\">" + esc(piece.replace(/ /g, "·")) + "<sub>" + r.ids[i] + "</sub></span>").join("")
+                                        + "\n<span class=\"f\">" + esc(t("demo.tokens", { n: r.ids.length, c: text.length, d: r.size })) + "</span>"
+                                        + (r.dropped.length ? "\n<span class=\"y\">" + esc(t("demo.dropped", { c: r.dropped.join(" ") })) + "</span>" : "");
+                                scroll();
+                        }).catch((err: Error) =>
+                        {
+                                out.className = "r";
+                                out.textContent = t("demo.failed", { e: err.message });
+                        });
                 },
                 brutus: (a) =>
                 {
@@ -468,10 +479,26 @@ function render(body: HTMLDivElement, w: Win): void
                                 print("usage: brutus &lt;key&gt; &lt;text&gt;   e.g. " + runBtn("brutus et-tu do not trust me", "brutus et-tu do not trust me"));
                                 return 1;
                         }
+                        const key = a[0] ?? "";
+                        if (key.length < BRUTUS_MIN_KEY)
+                        {
+                                print(esc(t("demo.keyShort", { n: BRUTUS_MIN_KEY })), "r");
+                                return 1;
+                        }
                         const text = a.slice(1).join(" ");
-                        const enc = mockEncrypt(text, a[0] ?? "");
-                        print("<span class=\"g\">" + esc(enc) + "</span>");
-                        print(esc(t("demo.ratio", { a: text.length, b: enc.length })), "f");
+                        const out = print(esc(t("demo.loading", { f: "brutus.wasm" })), "f");
+                        loadBrutus().then((encrypt) =>
+                        {
+                                const enc = encrypt(text, key);
+                                const bytes = (s: string): number => new TextEncoder().encode(s).length;
+                                out.className = "";
+                                out.innerHTML = "<span class=\"g\">" + esc(enc) + "</span>\n<span class=\"f\">" + esc(t("demo.ratio", { a: bytes(text), b: bytes(enc) })) + "</span>";
+                                scroll();
+                        }).catch((err: Error) =>
+                        {
+                                out.className = "r";
+                                out.textContent = t("demo.failed", { e: err.message });
+                        });
                 },
                 dwmc: (a) =>
                 {

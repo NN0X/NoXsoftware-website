@@ -6,7 +6,8 @@ import { renderBar, setLang, syncUrl } from "../bar";
 import { esc } from "../../../lib/esc";
 import { activityChart } from "../../../lib/activity";
 import { highlight, LANG_NAMES } from "../../../lib/highlight";
-import { mockEncrypt, mockTokenize } from "../../../lib/mock";
+import { loadBrutus, tokenize } from "../demos";
+import { BRUTUS_MIN_KEY } from "../../../lib/cicero";
 
 const ASCII = [
         "                 .=*-           ",
@@ -329,23 +330,68 @@ function render(body: HTMLDivElement, w: Win): void
                 const stat = el("div", "f");
                 wrap.append(result, stat);
                 buf.append(wrap);
+                const dropped = el("div", "y");
+                wrap.append(dropped);
+                stat.textContent = t("demo.loading", { f: isCicero ? "cicero.wasm" : "brutus.wasm" });
+                let pending: ReturnType<typeof setTimeout> | undefined;
+                let generation = 0;
+                const fail = (err: Error): void =>
+                {
+                        stat.className = "r";
+                        stat.textContent = t("demo.failed", { e: err.message });
+                };
                 const update = (): void =>
                 {
+                        const mine = ++generation;
                         if (isCicero)
                         {
-                                const toks = mockTokenize(first.value);
-                                result.replaceChildren(...toks.map((x) => el("span", "tk", x)));
-                                stat.textContent = t("demo.tokens", { n: toks.length, c: first.value.length });
+                                tokenize(first.value).then((r) =>
+                                {
+                                        if (mine !== generation)
+                                        {
+                                                return;
+                                        }
+                                        result.replaceChildren(...r.pieces.map((piece, i) =>
+                                        {
+                                                const tok = el("span", "tk", piece.replace(/ /g, "·"));
+                                                tok.append(el("sub", "", String(r.ids[i])));
+                                                return tok;
+                                        }));
+                                        stat.className = "f";
+                                        stat.textContent = t("demo.tokens", { n: r.ids.length, c: first.value.length, d: r.size });
+                                        dropped.textContent = r.dropped.length ? t("demo.dropped", { c: r.dropped.join(" ") }) : "";
+                                }).catch(fail);
                         }
                         else if (second)
                         {
-                                const enc = mockEncrypt(second.value.slice(0, 120), first.value);
-                                result.innerHTML = "<span class=\"g\">" + esc(enc) + "</span>";
-                                stat.textContent = t("demo.ratio", { a: second.value.length, b: enc.length });
+                                if (first.value.length < BRUTUS_MIN_KEY)
+                                {
+                                        result.textContent = "";
+                                        stat.className = "r";
+                                        stat.textContent = t("demo.keyShort", { n: BRUTUS_MIN_KEY });
+                                        return;
+                                }
+                                loadBrutus().then((encrypt) =>
+                                {
+                                        if (mine !== generation)
+                                        {
+                                                return;
+                                        }
+                                        const enc = encrypt(second.value, first.value);
+                                        const bytes = (s: string): number => new TextEncoder().encode(s).length;
+                                        result.innerHTML = "<span class=\"g\">" + esc(enc) + "</span>";
+                                        stat.className = "f";
+                                        stat.textContent = t("demo.ratio", { a: bytes(second.value), b: bytes(enc) });
+                                }).catch(fail);
                         }
                 };
-                first.addEventListener("input", update);
-                second?.addEventListener("input", update);
+                const debounced = (): void =>
+                {
+                        clearTimeout(pending);
+                        pending = setTimeout(update, 120);
+                };
+                first.addEventListener("input", debounced);
+                second?.addEventListener("input", debounced);
                 update();
         }
 
