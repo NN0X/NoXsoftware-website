@@ -1,8 +1,15 @@
 # NoXsoftware.pl overhaul: decisions
 
-Working record of what was agreed for the v2 site. `mockup.html` is the clickable prototype
-(open it in a browser); `gen_repo_data.py` is the throwaway script that pulled the real repo data
-it uses. Both get replaced by the real build in phase 1.
+Working record of what was agreed for the v2 site. `mockup.html` is the clickable prototype the
+real site was built from; `gen_repo_data.py` is the throwaway script that fed it (superseded by
+`scripts/fetch-repos.mjs`).
+
+## Phases
+
+1. Astro site, build-time repo data, plain pages in EN/PL, the dwm desktop (zsh, htop, nvim, Firefox), CI
+2. WebAssembly builds of Brutus and Cicero replacing the demo mocks
+3. F1Ratings page, ported from the unmerged `projects-page` branch, data generated from the F1Ratings repo
+4. Easter-egg pages with re-encoded media, deploy workflow and the Pi pull script
 
 ## Stack and hosting
 
