@@ -1,0 +1,2667 @@
+{
+ "generated": "2026-10-01",
+ "user": "NN0X",
+ "repos": {
+  "AdventOfCode-2025": {
+   "description": "",
+   "lang": "C",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-12-13",
+   "activity": {
+    "2025-12": 57
+   },
+   "log": [
+    [
+     "4635d9a",
+     "2025-12-13",
+     "readme edit"
+    ],
+    [
+     "64d131a",
+     "2025-12-13",
+     "finished day12"
+    ],
+    [
+     "7247510",
+     "2025-12-12",
+     "changed lua to cpp"
+    ],
+    [
+     "fc95d5b",
+     "2025-12-11",
+     "readme update"
+    ],
+    [
+     "61230e3",
+     "2025-12-11",
+     "finished day11"
+    ],
+    [
+     "b699e99",
+     "2025-12-11",
+     "finished task1"
+    ]
+   ],
+   "tree": [
+    [
+     "day1",
+     true
+    ],
+    [
+     "day10",
+     true
+    ],
+    [
+     "day11",
+     true
+    ],
+    [
+     "day12",
+     true
+    ],
+    [
+     "day2",
+     true
+    ],
+    [
+     "day3",
+     true
+    ],
+    [
+     "day4",
+     true
+    ],
+    [
+     "day5",
+     true
+    ],
+    [
+     "day6",
+     true
+    ],
+    [
+     "day7",
+     true
+    ],
+    [
+     "day8",
+     true
+    ],
+    [
+     "day9",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "finished.png",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Airport-Terminal-Sim": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-01-25",
+   "activity": {
+    "2024-11": 2,
+    "2025-01": 40
+   },
+   "log": [
+    [
+     "da1daf4",
+     "2025-01-25",
+     "done"
+    ],
+    [
+     "072b584",
+     "2025-01-25",
+     "finished"
+    ],
+    [
+     "69f83d2",
+     "2025-01-25",
+     "all done"
+    ],
+    [
+     "eda2bf4",
+     "2025-01-25",
+     "forced departure added"
+    ],
+    [
+     "8ac7a1e",
+     "2025-01-25",
+     "works with delays"
+    ],
+    [
+     "5d0f7f7",
+     "2025-01-25",
+     "while semop and fd cleanup"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "RAPORT_JEST_W_README",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "ApplicationFramework": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "release",
+   "last": "2024-04-22",
+   "activity": {
+    "2023-11": 1,
+    "2023-12": 8,
+    "2024-01": 6,
+    "2024-02": 3,
+    "2024-03": 1,
+    "2024-04": 3
+   },
+   "log": [
+    [
+     "3ef4e7a",
+     "2024-04-22",
+     "0.2 PRE-RELEASE"
+    ],
+    [
+     "04c3583",
+     "2024-04-08",
+     "VS project"
+    ],
+    [
+     "67d2163",
+     "2024-04-08",
+     "0.1 PRE-RELEASE"
+    ],
+    [
+     "4f86fe2",
+     "2024-03-15",
+     "Dev 0.1"
+    ],
+    [
+     "18a944d",
+     "2024-02-19",
+     "added labels changed comments"
+    ],
+    [
+     "98742f7",
+     "2024-02-06",
+     "added NDS for loading predefined contexts added default.ndl"
+    ]
+   ],
+   "tree": [
+    [
+     "examples",
+     true
+    ],
+    [
+     "lib",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitattributes",
+     false
+    ]
+   ]
+  },
+  "Arch-Utility-Scripts": {
+   "description": "",
+   "lang": "Shell",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-01-03",
+   "activity": {
+    "2024-09": 2,
+    "2024-10": 5,
+    "2024-12": 3,
+    "2025-01": 2
+   },
+   "log": [
+    [
+     "ec3bcfe",
+     "2025-01-03",
+     "updated audio"
+    ],
+    [
+     "1c461bd",
+     "2025-01-03",
+     "changes to checkupdates.sh"
+    ],
+    [
+     "bb7ca02",
+     "2024-12-28",
+     "fix to if statement"
+    ],
+    [
+     "8726b37",
+     "2024-12-26",
+     "fixes"
+    ],
+    [
+     "ca50991",
+     "2024-12-26",
+     "check updates improvements"
+    ],
+    [
+     "0559d28",
+     "2024-10-05",
+     "Changes to checkupdates"
+    ]
+   ],
+   "tree": [
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "audio_output_at2020.sh",
+     false
+    ],
+    [
+     "audio_output_hdmi.sh",
+     false
+    ],
+    [
+     "audio_output_headphones.sh",
+     false
+    ],
+    [
+     "checkupdates_startup.sh",
+     false
+    ],
+    [
+     "checkupdates.sh",
+     false
+    ],
+    [
+     "clock_sync.sh",
+     false
+    ],
+    [
+     "gen_backup.sh",
+     false
+    ],
+    [
+     "get_day.sh",
+     false
+    ],
+    [
+     "get_stock.sh",
+     false
+    ],
+    [
+     "get_theme.sh",
+     false
+    ],
+    [
+     "get_weather.sh",
+     false
+    ],
+    [
+     "keyboard_rs.sh",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "mirrors_up.sh",
+     false
+    ],
+    [
+     "mount_windows_programs.sh",
+     false
+    ],
+    [
+     "mount_windows_system.sh",
+     false
+    ],
+    [
+     "mouse_rs.sh",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "password_manager.sh",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "reset_settings.sh",
+     false
+    ],
+    [
+     "set_default_wallpaper.sh",
+     false
+    ],
+    [
+     "status_bar.sh",
+     false
+    ],
+    [
+     "volume_down.sh",
+     false
+    ],
+    [
+     "volume_toggle_mute.sh",
+     false
+    ],
+    [
+     "volume_up.sh",
+     false
+    ],
+    [
+     "volume.sh",
+     false
+    ]
+   ]
+  },
+  "ASCIIart": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-06-11",
+   "activity": {
+    "2025-06": 2
+   },
+   "log": [
+    [
+     "42ac897",
+     "2025-06-11",
+     "adjustements"
+    ],
+    [
+     "02307d1",
+     "2025-06-11",
+     "initial"
+    ]
+   ],
+   "tree": [
+    [
+     "resources",
+     true
+    ],
+    [
+     "__init__.py",
+     false
+    ],
+    [
+     "ASCIIart.py",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Brutus-Encryption": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2024-09-27",
+   "activity": {
+    "2024-06": 11,
+    "2024-08": 5,
+    "2024-09": 14
+   },
+   "log": [
+    [
+     "0441348",
+     "2024-09-27",
+     "Changes to readme and email update"
+    ],
+    [
+     "c2d293b",
+     "2024-09-24",
+     "Left only necessary characters in default charset"
+    ],
+    [
+     "4389095",
+     "2024-09-24",
+     "Changes to charset"
+    ],
+    [
+     "facc8a1",
+     "2024-09-24",
+     "Programmed in default charset"
+    ],
+    [
+     "2f9921d",
+     "2024-09-19",
+     "Fixes to Brutus::Utility"
+    ],
+    [
+     "884820b",
+     "2024-09-19",
+     "Added utility functions to library"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "charset.txt",
+     false
+    ],
+    [
+     "dict.txt",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/brutus.cpp",
+    "from": 10,
+    "lang": "cpp",
+    "code": "std::string Brutus::text(std::string text, std::string key)\n{\n    CHARSET charset(ENC::TEXT);\n    std::string encrypted = encrypt(charset, text, key);\n    return encrypted;\n}"
+   }
+  },
+  "CarWorkshopManager": {
+   "description": "",
+   "lang": "JavaScript",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-06-13",
+   "activity": {
+    "2025-05": 1,
+    "2025-06": 221
+   },
+   "log": [
+    [
+     "c857879",
+     "2025-06-13",
+     "added license info"
+    ],
+    [
+     "2669ff1",
+     "2025-06-13",
+     "add indexes raport"
+    ],
+    [
+     "8fa203f",
+     "2025-06-13",
+     "Add sql profiler report"
+    ],
+    [
+     "bc493fc",
+     "2025-06-13",
+     "Remove unneccessary imports (added after logging)"
+    ],
+    [
+     "6e938f2",
+     "2025-06-13",
+     "added opis to readme"
+    ],
+    [
+     "9da3564",
+     "2025-06-13",
+     "Tests fix - added additional NullLogger"
+    ]
+   ],
+   "tree": [
+    [
+     ".github",
+     true
+    ],
+    [
+     "CarWorkshopManager",
+     true
+    ],
+    [
+     "CarWorkshopManager.Tests",
+     true
+    ],
+    [
+     "Database",
+     true
+    ],
+    [
+     "docs",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "CarWorkshopManager.sln",
+     false
+    ],
+    [
+     "CarWorkshopManager.sln.DotSettings.user",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Chess": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-04-15",
+   "activity": {
+    "2025-03": 9,
+    "2025-04": 14
+   },
+   "log": [
+    [
+     "d6c175c",
+     "2025-04-15",
+     "movement done"
+    ],
+    [
+     "241f183",
+     "2025-04-06",
+     "castling still doesnt work"
+    ],
+    [
+     "a8db716",
+     "2025-04-06",
+     "added check checking + castling is broken"
+    ],
+    [
+     "b970c4c",
+     "2025-04-06",
+     "limited coloring possible moves to current color"
+    ],
+    [
+     "7bb987d",
+     "2025-04-05",
+     "improved moves coloring + added possible moves for the rest of pieces with basic castling (needs finishing)"
+    ],
+    [
+     "0b7a11e",
+     "2025-04-05",
+     "pawn possible moves + fixed possible moves coloring"
+    ]
+   ],
+   "tree": [
+    [
+     "include",
+     true
+    ],
+    [
+     "lib",
+     true
+    ],
+    [
+     "resources",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "ChristmasTree": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-12-24",
+   "activity": {
+    "2025-12": 2
+   },
+   "log": [
+    [
+     "a78bc48",
+     "2025-12-24",
+     "finished"
+    ],
+    [
+     "57084d1",
+     "2025-12-24",
+     "Initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "tree.py",
+     false
+    ]
+   ]
+  },
+  "CiceroTokenizer": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-11-02",
+   "activity": {
+    "2025-02": 7,
+    "2025-11": 2
+   },
+   "log": [
+    [
+     "a3939db",
+     "2025-11-02",
+     "moved some indented stuff from calculateFrequencyThread to countFrequency"
+    ],
+    [
+     "f72275c",
+     "2025-02-16",
+     "makefile fix"
+    ],
+    [
+     "a92b726",
+     "2025-02-16",
+     "fix"
+    ],
+    [
+     "a1d62b6",
+     "2025-02-16",
+     "updated notice and readme"
+    ],
+    [
+     "9c10c47",
+     "2025-02-16",
+     "tokenizer"
+    ]
+   ],
+   "tree": [
+    [
+     "dictionaries",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/tokenizer.cpp",
+    "from": 20,
+    "lang": "cpp",
+    "code": "size_t countFrequency(const std::string& newToken,\n                      const std::unordered_map<size_t, std::unordered_set<std::string>>& wordsByLength)\n{\n        size_t frequency = 0;\n        for (const auto& wordsLengthBracket : wordsByLength)\n        {\n                if (wordsLengthBracket.first < newToken.size())\n                {\n                        continue;\n                }\n                for (const std::string& word : wordsLengthBracket.second)\n                {\n                        if (word.find(newToken) != std::string::npos)\n                        {\n                                frequency++;\n                        }\n                }\n        }\n\n        return frequency;\n}"
+   }
+  },
+  "DWM": {
+   "description": "",
+   "lang": "C",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-01-03",
+   "activity": {
+    "2024-09": 2,
+    "2024-12": 2,
+    "2025-01": 1
+   },
+   "log": [
+    [
+     "1c69b8c",
+     "2025-01-03",
+     "fixed sound symbol"
+    ],
+    [
+     "31c497e",
+     "2024-12-30",
+     "fixed paths"
+    ],
+    [
+     "1842e12",
+     "2024-12-26",
+     "updated for new pc setup"
+    ],
+    [
+     "dd1e1b8",
+     "2024-09-27",
+     "Readme"
+    ],
+    [
+     "88f9ded",
+     "2024-09-27",
+     "Initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "dmenu",
+     true
+    ],
+    [
+     "dwm",
+     true
+    ],
+    [
+     "slstatus",
+     true
+    ],
+    [
+     "st",
+     true
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "EvaluateStock": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-09-22",
+   "activity": {
+    "2025-03": 13,
+    "2025-09": 5
+   },
+   "log": [
+    [
+     "97d8aff",
+     "2025-09-22",
+     "finished"
+    ],
+    [
+     "be75c7e",
+     "2025-09-12",
+     "prototype lin reg script"
+    ],
+    [
+     "f6635d7",
+     "2025-09-12",
+     "updated gitignore"
+    ],
+    [
+     "ec605d0",
+     "2025-03-18",
+     "~0.5 accuracy (so bad)"
+    ],
+    [
+     "626c9da",
+     "2025-03-17",
+     "data is now made sequentially"
+    ],
+    [
+     "f3ecbb4",
+     "2025-03-17",
+     "testing"
+    ]
+   ],
+   "tree": [
+    [
+     "symbols",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "evaluateStock.py",
+     false
+    ],
+    [
+     "gatherTrainingData.py",
+     false
+    ],
+    [
+     "gatherTrainingDataLinear.py",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "linearRegression.py",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "randomForest.py",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "F1Ratings": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-07-07",
+   "activity": {
+    "2025-06": 3,
+    "2025-07": 36
+   },
+   "log": [
+    [
+     "9d64dcf",
+     "2025-07-07",
+     "major fix to driver ratings computations. Fangio is the GOAT"
+    ],
+    [
+     "045bf12",
+     "2025-07-07",
+     "fix to drivers vs computation"
+    ],
+    [
+     "6b640fb",
+     "2025-07-06",
+     "link fix"
+    ],
+    [
+     "e244fe1",
+     "2025-07-06",
+     "readme"
+    ],
+    [
+     "1ba5476",
+     "2025-07-06",
+     "fixes to prints"
+    ],
+    [
+     "c72c0d4",
+     "2025-07-06",
+     "dump cleanup"
+    ]
+   ],
+   "tree": [
+    [
+     "f1ratings",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "main.py",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "requirements.txt",
+     false
+    ],
+    [
+     "test.sh",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "f1ratings/compute_driver.py",
+    "from": 5,
+    "lang": "py",
+    "code": "def compute_teammate_place_diff(drivers, statuses, driver_id, team_id, position, status, results, lastPossiblePosition):\n    try:\n        position = int(position)\n    except ValueError:\n        if not is_driver_fault(status, statuses):\n            return 0\n        else:\n            position = lastPossiblePosition\n\n    teammate_ids = [res[0] for res in results if res[1] == team_id and res[0] != driver_id]\n    if not teammate_ids:\n        return 0\n    teammate_positions = [res[2] for res in results if res[0] in teammate_ids]\n    teammate_statuses = [res[3] for res in results if res[0] in teammate_ids]"
+   }
+  },
+  "HeatTransferSim": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-06-13",
+   "activity": {
+    "2025-06": 1
+   },
+   "log": [
+    [
+     "c3f7200",
+     "2025-06-13",
+     "final"
+    ]
+   ],
+   "tree": [
+    [
+     "data",
+     true
+    ],
+    [
+     "graphs",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "compile.sh",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "run.sh",
+     false
+    ],
+    [
+     "sprawozdanie.odt",
+     false
+    ]
+   ]
+  },
+  "HMAC": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-01-27",
+   "activity": {
+    "2025-01": 14
+   },
+   "log": [
+    [
+     "7ed4d88",
+     "2025-01-27",
+     "fixed override for non default hash and cleaned up messages"
+    ],
+    [
+     "a4f76dc",
+     "2025-01-06",
+     "updated makefile and readme"
+    ],
+    [
+     "94736de",
+     "2025-01-06",
+     "docs finished"
+    ],
+    [
+     "5e9bc12",
+     "2025-01-06",
+     "updated makefile"
+    ],
+    [
+     "062da4a",
+     "2025-01-06",
+     "got rid of magic numbers. changed namespace name. cleanup"
+    ],
+    [
+     "6985960",
+     "2025-01-05",
+     "implemented hmac with tests (supports SHA1, SHA256, SHA516)"
+    ]
+   ],
+   "tree": [
+    [
+     "docs",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Maiora": {
+   "description": "",
+   "lang": "C",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-01-31",
+   "activity": {
+    "2025-06": 37,
+    "2025-08": 10,
+    "2025-10": 82,
+    "2025-11": 59,
+    "2025-12": 1,
+    "2026-01": 4
+   },
+   "log": [
+    [
+     "01e6290",
+     "2026-01-31",
+     "added language level support for multiprocessing"
+    ],
+    [
+     "8c2db17",
+     "2026-01-30",
+     "v0.2alpha of the spec"
+    ],
+    [
+     "06a94b4",
+     "2026-01-30",
+     "added deadlock prevention"
+    ],
+    [
+     "527d4cd",
+     "2026-01-30",
+     "spec edit"
+    ],
+    [
+     "c18ef0f",
+     "2025-12-20",
+     "moved function gen and variable gen to separate files"
+    ],
+    [
+     "bd1c9bf",
+     "2025-11-26",
+     "functionally finished funcDecl gen function"
+    ]
+   ],
+   "tree": [
+    [
+     "LICENSING",
+     true
+    ],
+    [
+     "spec",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "testing",
+     true
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "testing/0-hello-world/main.mai",
+    "from": 1,
+    "lang": "mai",
+    "code": "#import IO.print\n\nentry sint64 main(none)\n{\n        print(ascii\"Hello, world!\");\n\n        return 0s;\n}"
+   }
+  },
+  "Noxify": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2024-11-05",
+   "activity": {
+    "2024-10": 14,
+    "2024-11": 6
+   },
+   "log": [
+    [
+     "78fb679",
+     "2024-11-05",
+     "Added TODO"
+    ],
+    [
+     "01c141c",
+     "2024-11-04",
+     "Added padding to bottom of song and playlist lists"
+    ],
+    [
+     "68bd356",
+     "2024-11-04",
+     "Changed scaling + todo"
+    ],
+    [
+     "bf04fe5",
+     "2024-11-02",
+     "Split noxify into multiple source files for clarity"
+    ],
+    [
+     "06624d6",
+     "2024-11-02",
+     "Merged local and upstream songs to one column. Made volume slider unlinear"
+    ],
+    [
+     "f9c1577",
+     "2024-10-31",
+     "massive optimalization"
+    ]
+   ],
+   "tree": [
+    [
+     ".idea",
+     true
+    ],
+    [
+     "noxify",
+     true
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "MUSIC.md",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "NoXsoftware-website": {
+   "description": "",
+   "lang": "HTML",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-07-04",
+   "activity": {
+    "2024-07": 19,
+    "2024-09": 45,
+    "2025-02": 12,
+    "2025-07": 3
+   },
+   "log": [
+    [
+     "d1f9f64",
+     "2025-07-04",
+     "important cicero fix"
+    ],
+    [
+     "67913ed",
+     "2025-02-16",
+     "path fix"
+    ],
+    [
+     "1d04641",
+     "2025-02-16",
+     "lol fix"
+    ],
+    [
+     "dba0f5c",
+     "2025-02-16",
+     "php fix"
+    ],
+    [
+     "c1a491c",
+     "2025-02-16",
+     "fixes and img for cicero"
+    ],
+    [
+     "472d83d",
+     "2025-02-16",
+     "fix"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "PasswordGenerator": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-11-19",
+   "activity": {
+    "2024-11": 9,
+    "2025-11": 4
+   },
+   "log": [
+    [
+     "7ca9067",
+     "2025-11-19",
+     "fixed seed to be of correct entropy"
+    ],
+    [
+     "1832244",
+     "2025-11-19",
+     "got rid of unnecessary define magic and fixed formatting"
+    ],
+    [
+     "d49a905",
+     "2025-11-16",
+     "changed rand to random device + hack to change ints to uint64s"
+    ],
+    [
+     "82cd8ad",
+     "2024-11-21",
+     "fixed paths"
+    ],
+    [
+     "9f9c152",
+     "2024-11-21",
+     "created cli"
+    ],
+    [
+     "619b5dc",
+     "2024-11-20",
+     "word styling"
+    ]
+   ],
+   "tree": [
+    [
+     "resources",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "PasswordManager": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-04-26",
+   "activity": {
+    "2025-04": 2
+   },
+   "log": [
+    [
+     "a6960e6",
+     "2025-04-26",
+     "added license"
+    ],
+    [
+     "c80bb3a",
+     "2025-04-26",
+     "moved from unsafe private repo"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Programmar": {
+   "description": "",
+   "lang": "PHP",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-01-29",
+   "activity": {
+    "2025-10": 10,
+    "2025-12": 44,
+    "2026-01": 16
+   },
+   "log": [
+    [
+     "3bc09b0",
+     "2026-01-29",
+     "ram refresh fix"
+    ],
+    [
+     "749547f",
+     "2026-01-29",
+     "hotfix"
+    ],
+    [
+     "caf2dd0",
+     "2026-01-29",
+     "hothotfixes"
+    ],
+    [
+     "b8a05a8",
+     "2026-01-29",
+     "final hotfixes i hope"
+    ],
+    [
+     "06e37b5",
+     "2026-01-29",
+     "hotfixes"
+    ],
+    [
+     "c29229b",
+     "2026-01-29",
+     "another hotfixes"
+    ]
+   ],
+   "tree": [
+    [
+     "docker",
+     true
+    ],
+    [
+     "docs",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "tests",
+     true
+    ],
+    [
+     ".dockerignore",
+     false
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     ".gitmodules",
+     false
+    ],
+    [
+     "composer.json",
+     false
+    ],
+    [
+     "docker-compose.yaml",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "phpunit.xml",
+     false
+    ],
+    [
+     "ProgrammarContentService",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/controllers/AppController.php",
+    "from": 1,
+    "lang": "php",
+    "code": "<?php\n\nclass AppController\n{\n        protected $jsonInput = [];\n\n        public function __construct()\n        {\n                if ($_SERVER['REQUEST_METHOD'] === 'POST')\n                {\n                        $contentType = $_SERVER['CONTENT_TYPE'] ?? '';\n                        if (str_contains($contentType, 'application/json'))\n                        {\n                                $this->jsonInput = json_decode(file_get_contents('php://input'), true) ?? [];\n                        }\n                        $this->validateCsrf();\n                }\n        }\n\n        protected function render(string $template = null, array $variables = [])"
+   }
+  },
+  "Project-Midnight-LEGACY-": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "Dev",
+   "last": "2023-10-03",
+   "activity": {
+    "2023-06": 30,
+    "2023-09": 8,
+    "2023-10": 2
+   },
+   "log": [
+    [
+     "726c5dd",
+     "2023-10-03",
+     "changed gitignore"
+    ],
+    [
+     "d1e63be",
+     "2023-10-03",
+     "Setup for font implementation"
+    ],
+    [
+     "f1ce452",
+     "2023-09-29",
+     "Deleted postprocess.cpp and postprocess.h"
+    ],
+    [
+     "f1944ce",
+     "2023-09-20",
+     "Added config variables Wrote config file in NDL"
+    ],
+    [
+     "e8b09eb",
+     "2023-09-20",
+     "Deleted settings.cpp and settings.h"
+    ],
+    [
+     "250ed1c",
+     "2023-09-20",
+     "Finished NDL prototype"
+    ]
+   ],
+   "tree": [
+    [
+     ".vs",
+     true
+    ],
+    [
+     ".vscode",
+     true
+    ],
+    [
+     "dependencies",
+     true
+    ],
+    [
+     "source",
+     true
+    ],
+    [
+     "x64",
+     true
+    ],
+    [
+     ".gitattributes",
+     false
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "Project-Midnight.exe.lnk",
+     false
+    ],
+    [
+     "Project-Midnight.sln",
+     false
+    ],
+    [
+     "Project-Midnight.vcxproj",
+     false
+    ],
+    [
+     "Project-Midnight.vcxproj.filters",
+     false
+    ],
+    [
+     "Project-Midnight.vcxproj.user",
+     false
+    ],
+    [
+     "resources.lnk",
+     false
+    ]
+   ]
+  },
+  "ProjectEuterpe": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-03-24",
+   "activity": {
+    "2026-03": 6
+   },
+   "log": [
+    [
+     "903c8eb",
+     "2026-03-24",
+     "changed input to allow proper keyboard behavior"
+    ],
+    [
+     "b64405f",
+     "2026-03-24",
+     "added ability to play chords"
+    ],
+    [
+     "73f9c3e",
+     "2026-03-23",
+     "basic note playing"
+    ],
+    [
+     "937feb9",
+     "2026-03-23",
+     "basic init & play loop"
+    ],
+    [
+     "c16568d",
+     "2026-03-23",
+     "basic setup"
+    ],
+    [
+     "f8b48b6",
+     "2026-03-23",
+     "Initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "include",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "ProjectSulla": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-09-30",
+   "activity": {
+    "2026-01": 4,
+    "2026-02": 30,
+    "2026-03": 8,
+    "2026-09": 157
+   },
+   "log": [
+    [
+     "f26be4b",
+     "2026-09-30",
+     "6502 computer loop"
+    ],
+    [
+     "083c93b",
+     "2026-09-30",
+     "6502 core branches"
+    ],
+    [
+     "fdbea55",
+     "2026-09-30",
+     "6502 computer"
+    ],
+    [
+     "f8f795f",
+     "2026-09-30",
+     "6502 core loadzp"
+    ],
+    [
+     "e1563c8",
+     "2026-09-30",
+     "ram primitives (async + sync) and cleanup of stale code"
+    ],
+    [
+     "8ad0f81",
+     "2026-09-30",
+     "6502 core store"
+    ]
+   ],
+   "tree": [
+    [
+     "docs",
+     true
+    ],
+    [
+     "include",
+     true
+    ],
+    [
+     "layouts",
+     true
+    ],
+    [
+     "lib",
+     true
+    ],
+    [
+     "perf",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "tests",
+     true
+    ],
+    [
+     "tools",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "TODO",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/gates.cpp",
+    "from": 26,
+    "lang": "cpp",
+    "code": "Part makeFoldPart(char foldOp, bool invert)\n{\n        return [foldOp, invert](std::vector<State> input) -> std::vector<State> {\n                int acc = 0;\n                if (!input.empty())\n                {\n                        acc = (input[0] == STATE_HIGH) ? 1 : 0;\n                        for (size_t i = 1; i < input.size(); ++i)\n                        {\n                                int b = (input[i] == STATE_HIGH) ? 1 : 0;\n                                if (foldOp == '&') acc &= b;\n                                else if (foldOp == '|') acc |= b;\n                                else if (foldOp == '^') acc ^= b;\n                        }\n                }\n                if (invert) acc = !acc;\n                return { acc ? STATE_HIGH : STATE_LOW };\n        };\n}"
+   }
+  },
+  "ProjectSybilla": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-02-09",
+   "activity": {
+    "2025-12": 10,
+    "2026-01": 17,
+    "2026-02": 1
+   },
+   "log": [
+    [
+     "efdd337",
+     "2026-02-09",
+     "added license"
+    ],
+    [
+     "b5375c8",
+     "2026-01-13",
+     "fixed abstraction of window"
+    ],
+    [
+     "bb79bae",
+     "2026-01-13",
+     "extracted window class"
+    ],
+    [
+     "aa8a0e9",
+     "2026-01-13",
+     "decoupled entitymanager and renderer"
+    ],
+    [
+     "cf04963",
+     "2026-01-13",
+     "instance indexing fix"
+    ],
+    [
+     "1dab376",
+     "2026-01-13",
+     "some simplifications to entitymanager and renderer"
+    ]
+   ],
+   "tree": [
+    [
+     "include",
+     true
+    ],
+    [
+     "lib",
+     true
+    ],
+    [
+     "resources",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/game.cpp",
+    "from": 107,
+    "lang": "cpp",
+    "code": "void Game::run()\n{\n        double lastTime = glfwGetTime();\n        int nbFrames = 0;\n\n        while (!window.shouldClose())\n        {\n                double currentTime = glfwGetTime();\n                nbFrames++;\n\n                if (currentTime - lastTime >= 1.0)\n                {\n                        double fps = (double)nbFrames / (currentTime - lastTime);\n                        std::string newTitle = \"Sybilla - FPS: \" + std::to_string(fps);\n                        window.setTitle(newTitle);\n\n                        nbFrames = 0;\n                        lastTime += 1.0;"
+   }
+  },
+  "Qtify": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "main",
+   "last": "2024-09-27",
+   "activity": {
+    "2024-05": 5,
+    "2024-06": 44,
+    "2024-09": 2
+   },
+   "log": [
+    [
+     "561b129",
+     "2024-09-27",
+     "email update"
+    ],
+    [
+     "f393af8",
+     "2024-06-17",
+     "readme update"
+    ],
+    [
+     "b01c723",
+     "2024-06-16",
+     "final fix"
+    ],
+    [
+     "7c8f620",
+     "2024-06-16",
+     "added gitattributes and gitignore"
+    ],
+    [
+     "bec1e64",
+     "2024-06-16",
+     "license fix 6"
+    ],
+    [
+     "161da7b",
+     "2024-06-16",
+     "Delete .vscode directory"
+    ]
+   ],
+   "tree": [
+    [
+     "build",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "ui",
+     true
+    ],
+    [
+     ".gitattributes",
+     false
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "CMakeLists.txt",
+     false
+    ],
+    [
+     "CMakeLists.txt.user",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "resources.qrc",
+     false
+    ]
+   ]
+  },
+  "SocratesNSLM": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-02-13",
+   "activity": {
+    "2025-02": 18
+   },
+   "log": [
+    [
+     "4151f7b",
+     "2025-02-13",
+     "fix"
+    ],
+    [
+     "813f8d3",
+     "2025-02-13",
+     "fix to addTokens end message"
+    ],
+    [
+     "f943134",
+     "2025-02-13",
+     "added pre space to words so paired tokens can have spaces. changed token dict size to 2^16"
+    ],
+    [
+     "42282fb",
+     "2025-02-13",
+     "finished tokenizer"
+    ],
+    [
+     "0d6bec6",
+     "2025-02-13",
+     "optimized tokenizeDataset and created macro for debugging and logging"
+    ],
+    [
+     "98ca7af",
+     "2025-02-13",
+     "renaming and comments"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "TDC2": {
+   "description": "",
+   "lang": "C",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-06-06",
+   "activity": {
+    "2026-06": 31
+   },
+   "log": [
+    [
+     "a9043be",
+     "2026-06-06",
+     "doc cleanup"
+    ],
+    [
+     "5a008ea",
+     "2026-06-06",
+     "typo fix"
+    ],
+    [
+     "a904389",
+     "2026-06-06",
+     "cleanup"
+    ],
+    [
+     "ad100e0",
+     "2026-06-06",
+     "docs and 1 additional test"
+    ],
+    [
+     "a5acba4",
+     "2026-06-06",
+     "vendor cleanup"
+    ],
+    [
+     "3b47f29",
+     "2026-06-06",
+     "cleanup"
+    ]
+   ],
+   "tree": [
+    [
+     "docs",
+     true
+    ],
+    [
+     "include",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     "tests",
+     true
+    ],
+    [
+     "third_party",
+     true
+    ],
+    [
+     ".clang-format",
+     false
+    ],
+    [
+     ".clang-tidy",
+     false
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "BUILDING.md",
+     false
+    ],
+    [
+     "CMakeLists.txt",
+     false
+    ],
+    [
+     "LICENSE",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ],
+   "excerpt": {
+    "path": "src/pqldp/pqldp_antireplay.c",
+    "from": 11,
+    "lang": "c",
+    "code": "bool pqldpAntireplayCheck(const PqldpAntiReplayCtx_t *ctx, uint32_t seq)\n{\n        if (seq > ctx->topSeq)\n        {\n                return true;\n        }\n        uint32_t offset = ctx->topSeq - seq;\n        if (offset >= PQLDP_REPLAY_WINDOW_SIZE)\n        {\n                return false;\n        }\n        return (ctx->windowBitmap & (1ULL << offset)) == 0;"
+   }
+  },
+  "Totality-Database-Utility": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2024-09-27",
+   "activity": {
+    "2024-09": 4
+   },
+   "log": [
+    [
+     "a52b748",
+     "2024-09-27",
+     "Changes to notice"
+    ],
+    [
+     "2a882a9",
+     "2024-09-11",
+     "TDB format example file"
+    ],
+    [
+     "795a1f0",
+     "2024-09-11",
+     "Initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "resources",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Totality-Encrypted-Archive-Utility": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-02-08",
+   "activity": {
+    "2024-09": 8,
+    "2024-12": 19,
+    "2025-01": 4,
+    "2025-02": 4
+   },
+   "log": [
+    [
+     "43f8e8c",
+     "2025-02-08",
+     "basic file-directory structure. checked moveFileInPlace algorithm. started design of manageCache functionality"
+    ],
+    [
+     "bfa7917",
+     "2025-02-02",
+     "added tree() function"
+    ],
+    [
+     "90c1a08",
+     "2025-02-01",
+     "changed file headers caching to unordered map, created proper list files function, fixed epoch time for existing files, fixed \"invalid path\" message"
+    ],
+    [
+     "06ca0a4",
+     "2025-01-30",
+     "got rid of magic numbers"
+    ],
+    [
+     "77fdc18",
+     "2025-01-29",
+     "fixed bug"
+    ],
+    [
+     "88194af",
+     "2025-01-29",
+     "found where the bug source"
+    ]
+   ],
+   "tree": [
+    [
+     "resources",
+     true
+    ],
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "archive.tea",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "Totality-Math-Library": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2025-03-01",
+   "activity": {
+    "2025-02": 6,
+    "2025-03": 2
+   },
+   "log": [
+    [
+     "0d429a7",
+     "2025-03-01",
+     "tensor basic functionality finished"
+    ],
+    [
+     "48f996a",
+     "2025-02-28",
+     "added unoptimized slicing, reshaping and transposing for tensors"
+    ],
+    [
+     "115dec6",
+     "2025-02-20",
+     "fixes to mShape, mStride, rank-size asserts, print"
+    ],
+    [
+     "fc80d54",
+     "2025-02-19",
+     "readme update"
+    ],
+    [
+     "09a041e",
+     "2025-02-19",
+     "initial"
+    ],
+    [
+     "9467335",
+     "2025-02-19",
+     "Initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "src",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "Makefile",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "VibeOOP": {
+   "description": "",
+   "lang": "C++",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-01-30",
+   "activity": {
+    "2025-10": 3,
+    "2025-11": 13,
+    "2025-12": 5,
+    "2026-01": 14
+   },
+   "log": [
+    [
+     "4dcd695",
+     "2026-01-30",
+     "readme and license"
+    ],
+    [
+     "e64e750",
+     "2026-01-30",
+     "cleanup"
+    ],
+    [
+     "7722418",
+     "2026-01-30",
+     "cleanup"
+    ],
+    [
+     "9276133",
+     "2026-01-30",
+     "cleanup"
+    ],
+    [
+     "23406e3",
+     "2026-01-30",
+     "cleanup"
+    ],
+    [
+     "e90fc8c",
+     "2026-01-30",
+     "merged lab1"
+    ]
+   ],
+   "tree": [
+    [
+     "CoordinateConverter",
+     true
+    ],
+    [
+     "EpidemicSim",
+     true
+    ],
+    [
+     "ExchangeMarket",
+     true
+    ],
+    [
+     "FirefighterDispatcher",
+     true
+    ],
+    [
+     "RadarTracking",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ]
+   ]
+  },
+  "XTB-bot": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2024-12-28",
+   "activity": {
+    "2024-12": 1
+   },
+   "log": [
+    [
+     "3cb2fc2",
+     "2024-12-28",
+     "initial commit"
+    ]
+   ],
+   "tree": [
+    [
+     "config",
+     true
+    ],
+    [
+     "tests",
+     true
+    ],
+    [
+     ".gitignore",
+     false
+    ],
+    [
+     "analizer.py",
+     false
+    ],
+    [
+     "API.py",
+     false
+    ],
+    [
+     "clean-xtb-bot.sh",
+     false
+    ],
+    [
+     "config.py",
+     false
+    ],
+    [
+     "enter-xtb-bot.sh",
+     false
+    ],
+    [
+     "gatherer.py",
+     false
+    ],
+    [
+     "LICENSE.md",
+     false
+    ],
+    [
+     "NOTICE.md",
+     false
+    ],
+    [
+     "README.md",
+     false
+    ],
+    [
+     "run-xtb-bot.sh",
+     false
+    ],
+    [
+     "scorer.py",
+     false
+    ],
+    [
+     "TODO",
+     false
+    ],
+    [
+     "trader.py",
+     false
+    ],
+    [
+     "utils.py",
+     false
+    ],
+    [
+     "xtb-bot.py",
+     false
+    ]
+   ]
+  },
+  "ZTPAI": {
+   "description": "",
+   "lang": "Python",
+   "archived": false,
+   "branch": "master",
+   "last": "2026-05-28",
+   "activity": {
+    "2026-03": 3,
+    "2026-04": 2,
+    "2026-05": 7
+   },
+   "log": [
+    [
+     "f33da3d",
+     "2026-05-28",
+     "fix"
+    ],
+    [
+     "fc33e2a",
+     "2026-05-28",
+     "cleanup"
+    ],
+    [
+     "2d257fe",
+     "2026-05-28",
+     "initial"
+    ],
+    [
+     "552bda7",
+     "2026-05-28",
+     "cleanup"
+    ],
+    [
+     "80e07a0",
+     "2026-05-28",
+     "initial"
+    ],
+    [
+     "49cc098",
+     "2026-05-10",
+     "finished"
+    ]
+   ],
+   "tree": [
+    [
+     "lab1",
+     true
+    ],
+    [
+     "lab2",
+     true
+    ],
+    [
+     "lab3",
+     true
+    ],
+    [
+     "lab4",
+     true
+    ],
+    [
+     "lab5",
+     true
+    ],
+    [
+     "task-manager",
+     true
+    ],
+    [
+     "LICENSE",
+     false
+    ]
+   ]
+  }
+ }
+}
