@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectsView from "../../components/ProjectsView.astro";
+import { desktopData } from "../../data/site";
+import { translate } from "../../lib/i18n";
+
+const lang = "en";
+---
+<Layout lang={lang} title={translate(lang, "site.allRepos") + " — NoXsoftware"} description={translate(lang, "site.description")} path="/projects/" desktop={{ ...(await desktopData(lang)), focus: "htop" }}>
+        <ProjectsView lang={lang} />
+</Layout>

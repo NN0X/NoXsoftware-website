@@ -1,0 +1,68 @@
+/* The plain pages: what search engines, no-JS visitors and anyone who prefers a normal website get. */
+main.plain
+{
+        max-width: 80ch;
+        margin: 0 auto;
+        padding-inline: 16px;
+        padding-block: 24px 64px;
+        font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+        display: grid;
+        gap: 20px;
+}
+.plain h1, .plain h2, .plain h3 { font-family: var(--f-ui); text-wrap: balance; line-height: 1.2; margin: 0; }
+.plain h1 { font-size: 2.1rem; color: #fff; }
+.plain h2 { font-size: 1.3rem; color: var(--purple); margin-top: 12px; }
+.plain h3 { font-size: 1.05rem; color: var(--blue); margin-top: 8px; }
+.plain p, .plain ul, .plain ol, .plain blockquote { margin: 0; }
+.plain ul { padding-left: 22px; display: grid; gap: 2px; }
+.plain blockquote { border-left: 3px solid var(--faint); padding-left: 12px; color: var(--dim); font-style: italic; }
+.plain code { font-family: var(--f-ui); font-size: 0.95em; background: var(--win-2); padding: 0 4px; border-radius: 3px; }
+.plain .muted { color: var(--dim); font-size: 0.9rem; }
+.plain .lede { font-size: 1.15rem; color: var(--dim); }
+.plain .prose { display: grid; gap: 12px; }
+
+.plain .top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.plain .top .home { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; font: 700 1.5rem/1 var(--f-ui); margin-right: auto; }
+.plain .top .home i { width: 40px; height: 40px; background: var(--purple); -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+.plain .top nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--f-ui); }
+.plain .top nav a { color: var(--fg); }
+.plain .to-desktop { border: 1px solid var(--purple); background: transparent; color: var(--purple); padding: 4px 12px; border-radius: 4px; cursor: pointer; font-family: var(--f-ui); }
+.plain .to-desktop:hover { background: var(--purple); color: var(--bg); }
+
+.plain .featured { display: grid; gap: 2px; }
+.plain .featured a { display: grid; grid-template-columns: 12ch minmax(0, 1fr) 7ch 8ch; gap: 0 16px; align-items: baseline; padding: 6px 8px; border-radius: 4px; text-decoration: none; color: var(--fg); }
+.plain .featured a:hover { background: var(--win-2); }
+.plain .featured .n { font: 700 1.05rem var(--f-ui); color: var(--purple); }
+.plain .featured .s { color: var(--dim); }
+.plain .featured .l, .plain .featured .t { font-family: var(--f-ui); color: var(--faint); font-variant-numeric: tabular-nums; }
+
+.plain .table-wrap { overflow-x: auto; }
+.plain .repos { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.plain .repos th { text-align: left; font: 700 0.9rem var(--f-ui); color: var(--purple); border-bottom: 1px solid var(--line); padding: 6px 8px; white-space: nowrap; }
+.plain .repos td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.plain .repos td.num, .plain .repos td.date { font-family: var(--f-ui); white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--dim); }
+
+.plain .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(26ch, 1fr)); gap: 4px 18px; margin: 0; font-family: var(--f-ui); }
+.plain .facts div { display: flex; gap: 10px; }
+.plain .facts dt { color: var(--yellow); min-width: 11ch; }
+.plain .facts dd { margin: 0; }
+.plain .chart { margin-top: 1.6em; padding-left: 0; }
+.plain .chart-x { padding-left: 0; }
+
+.plain .code { background: var(--win); border: 1px solid var(--line); border-radius: 6px; overflow-x: auto; padding: 12px 0; font: 15px/1.5 var(--f-ui); }
+.plain .code ol { list-style: none; margin: 0; padding: 0; counter-reset: ln var(--start); display: block; }
+.plain .code li { counter-increment: ln; white-space: pre; padding-right: 16px; }
+.plain .code li::before { content: counter(ln); display: inline-block; width: 5ch; margin-right: 14px; text-align: right; color: var(--faint); }
+
+.plain .commits { list-style: none; padding: 0 !important; font-family: var(--f-ui); }
+.plain .commits li { display: flex; gap: 10px; flex-wrap: wrap; }
+.plain .commits .h { color: var(--yellow); }
+.plain .commits .dt { color: var(--faint); }
+
+.plain .notfound { font: 700 5rem/1 var(--f-ui); color: var(--purple); }
+.plain footer { border-top: 1px solid var(--line); padding-top: 14px; color: var(--dim); font-size: 0.9rem; display: grid; gap: 4px; }
+@media (max-width: 640px)
+{
+        .plain .featured a { grid-template-columns: minmax(0, 1fr) 7ch; }
+        .plain .featured .s, .plain .featured .t { display: none; }
+}

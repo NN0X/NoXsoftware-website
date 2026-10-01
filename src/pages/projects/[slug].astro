@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectView from "../../components/ProjectView.astro";
+import { PROJECTS, SITE_REPOS, desktopData, projectTexts, repoOfSlug, slugOf } from "../../data/site";
+
+export function getStaticPaths()
+{
+        return Object.keys(SITE_REPOS).map((repo) => ({ params: { slug: slugOf(repo) } }));
+}
+
+const lang = "en";
+const repo = repoOfSlug(Astro.params.slug)!;
+const config = PROJECTS.find((p) => p.repo === repo);
+const text = config ? (await projectTexts())[config.slug]?.[lang] : undefined;
+const title = (config?.name ?? repo) + " — NoXsoftware";
+const description = text?.sub ?? SITE_REPOS[repo]?.description ?? repo;
+---
+<Layout lang={lang} title={title} description={description} path={"/projects/" + slugOf(repo) + "/"} desktop={await desktopData(lang, repo)}>
+        <ProjectView lang={lang} repo={repo} />
+</Layout>

@@ -1,0 +1,18 @@
+---
+import type { Lang } from "../data/types";
+import { SNAPSHOT } from "../data/site";
+import { translate } from "../lib/i18n";
+
+interface Props
+{
+        lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+<footer>
+        <p><b>{translate(lang, "site.contact")}:</b> nox@noxsoftware.pl · <a href="https://github.com/NN0X">GitHub</a> · <a href="https://linkedin.com/in/tomasz-sarkowicz">LinkedIn</a></p>
+        <p>{translate(lang, "site.contactNote")}</p>
+        <p>{translate(lang, "site.plainNote")} {translate(lang, "site.generated", { d: SNAPSHOT.generated })}</p>
+        <p>{translate(lang, "site.hosted")}</p>
+</footer>

@@ -1,0 +1,85 @@
+---
+import "@fontsource/ubuntu-mono/400.css";
+import "@fontsource/ubuntu-mono/700.css";
+import "@fontsource/ubuntu-mono/400-italic.css";
+import "../styles/base.css";
+import "../styles/plain.css";
+import "../styles/desktop.css";
+import type { DesktopData, Lang } from "../data/types";
+import { pathFor } from "../data/site";
+
+interface Props
+{
+        lang: Lang;
+        title: string;
+        description: string;
+        // path without the language prefix, e.g. "/projects/sulla/"
+        path: string;
+        desktop: DesktopData;
+        notFound?: boolean;
+}
+
+const { lang, title, description, path, desktop, notFound = false } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, "") ?? "";
+// Keep "</script>" and friends out of the inline JSON.
+const json = JSON.stringify({ ...desktop, notFound }).replace(/</g, "\\u003c");
+---
+<!doctype html>
+<html lang={lang}>
+        <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="theme-color" content="#0b0910" />
+                <meta name="author" content="NoX" />
+                {!notFound && <link rel="canonical" href={site + pathFor(lang, path)} />}
+                {!notFound && <link rel="alternate" hreflang="en" href={site + pathFor("en", path)} />}
+                {!notFound && <link rel="alternate" hreflang="pl" href={site + pathFor("pl", path)} />}
+                {!notFound && <link rel="alternate" hreflang="x-default" href={site + pathFor("en", path)} />}
+                <link rel="icon" href="/favicon.png" type="image/png" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content={site + "/favicon.png"} />
+                <script is:inline>
+                        // Show the desktop unless the visitor asked for the plain pages. If the desktop does not
+                        // report back quickly (script blocked or broken), fall back to the plain pages.
+                        (function ()
+                        {
+                                let plain = /[?&]plain\b/.test(location.search);
+                                try
+                                {
+                                        plain = plain || localStorage.getItem("nox-plain") === "1";
+                                }
+                                catch
+                                {
+                                }
+                                if (plain)
+                                {
+                                        return;
+                                }
+                                document.documentElement.classList.add("desktop");
+                                setTimeout(function ()
+                                {
+                                        if (!window.noxBooted)
+                                        {
+                                                document.documentElement.classList.remove("desktop");
+                                        }
+                                }, 4000);
+                        })();
+                </script>
+        </head>
+        <body>
+                <main class="plain">
+                        <slot />
+                </main>
+                <div class="os" id="os" hidden></div>
+                <script type="application/json" id="nox-data" set:html={json}></script>
+                <script>
+                        import { boot } from "../scripts/desktop/main";
+
+                        boot();
+                </script>
+        </body>
+</html>
