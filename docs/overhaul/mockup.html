@@ -1730,6 +1730,33 @@ RENDER.term = function (body, w)
                                 print("fine. " + runBtn("M-x butterfly", "M-x butterfly") + " and " + runBtn("M-x doctor", "M-x doctor") + " work. that's all the Emacs you get.", "y");
                         return 127;
                 },
+                code: function ()
+                {
+                        codeTries++;
+                        const target = repoOfCwd();
+                        function toNvim(msg)
+                        {
+                                print(msg, "y");
+                                setTimeout(function () { openProject(target); }, 900);
+                        }
+                        if (codeTries > 1)
+                        {
+                                print("Installing extension 'vscodevim.vim'...");
+                                toNvim("congratulations, you reinvented nvim. opening the real one.");
+                                return 0;
+                        }
+                        ask(print("Do you trust the authors of the files in this folder? (y or n) "), "yn", function (k)
+                        {
+                                if (k === "n")
+                                {
+                                        toNvim("Restricted Mode is intended for safe code browsing. nvim trusts you, opening that instead.");
+                                        return;
+                                }
+                                print('<span class="f">[main] starting Electron...\n[main] bundling a web browser to edit a text file...\n[main] RSS 1.2 GB and climbing</span>\n<span class="r">[main] Extension host terminated unexpectedly.</span>');
+                                toNvim("falling back to nvim. it started before you finished reading this.");
+                        });
+                        return 0;
+                },
                 "M-x": function (a)
                 {
                         const c = (a[0] || "").toLowerCase();
@@ -1949,8 +1976,11 @@ RENDER.term = function (body, w)
         CMDS["apt-get"] = CMDS.apt;
         CMDS.msedge = CMDS.edge;
         ["shutdown", "poweroff", "systemctl"].forEach(function (k) { CMDS[k] = CMDS.reboot; });
-        const HIDDEN = new Set(["Hyprland", "hyprland", "win", "windows", "explorer.exe", "cmd.exe", "powershell", "regedit", "windows.exe", "winget", "choco", "scoop", "apt", "apt-get", "edge", "msedge", "wsl", "butterfly", "doctor", "M-x", "emacs", "nano", "bash", "chsh", "reboot", "shutdown", "poweroff", "systemctl"]);
+        const HIDDEN = new Set(["Hyprland", "hyprland", "win", "windows", "explorer.exe", "cmd.exe", "powershell", "regedit", "windows.exe", "winget", "choco", "scoop", "apt", "apt-get", "edge", "msedge", "wsl", "butterfly", "doctor", "M-x", "emacs", "code", "vscode", "codium", "nano", "bash", "chsh", "reboot", "shutdown", "poweroff", "systemctl"]);
         let emacsTries = 0;
+        let codeTries = 0;
+        CMDS.vscode = CMDS.code;
+        CMDS.codium = CMDS.code;
         let busy = false;
         let mode = null;
 
@@ -2000,6 +2030,7 @@ RENDER.term = function (body, w)
                 [/\b(arch|linux|dwm)\b/i, ["I see you have good taste. Go on.", "And how does {0} make you feel?"]],
                 [/\b(vim|nvim|neovim)\b/i, ["Is it because you could not exit {0} that you came to me?"]],
                 [/\bemacs\b/i, ["We do not speak that name in this house."]],
+                [/\b(vs ?code|vscode)\b/i, ["How long have you been using a web browser to edit text?", "And does {0} make you feel productive, or just busy?"]],
                 [/\bpython\b/i, ["Have you tried C++?"]],
                 [/\bi am (.+)/i, ["Why do you say you are {1}?", "How long have you been {1}?"]],
                 [/\bi feel (.+)/i, ["Do you often feel {1}?"]],
