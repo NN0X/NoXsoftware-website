@@ -4,7 +4,7 @@ import { monthRange, activityChart } from "../src/lib/activity";
 import { highlight } from "../src/lib/highlight";
 import { esc } from "../src/lib/esc";
 import { normalizeUrl } from "../src/lib/url";
-import { mockEncrypt, mockTokenize } from "../src/lib/mock";
+import { allowedCharacters, safeText } from "../src/lib/cicero";
 
 describe("lev", () =>
 {
@@ -76,15 +76,15 @@ describe("normalizeUrl", () =>
         });
 });
 
-describe("demo mocks", () =>
+describe("cicero input filter", () =>
 {
-        it("keep Brutus' promise of a 1:1 size ratio", () =>
+        const allowed = allowedCharacters("a\nb\n \n,\nab\nlonger");
+        it("collects the single-character tokens of a dictionary", () =>
         {
-                const text = "Brutus should not be trusted";
-                expect(mockEncrypt(text, "et tu")).toHaveLength(text.length);
+                expect([...allowed].sort()).toEqual([" ", ",", "a", "b"]);
         });
-        it("mark word starts like a SentencePiece-style tokenizer", () =>
+        it("keeps only characters Cicero can always fall back to and reports the rest", () =>
         {
-                expect(mockTokenize("great product")).toEqual(["great", "▁product"]);
+                expect(safeText("ab, 5 łb", allowed)).toEqual({ text: "ab, b", dropped: ["5", "ł"] });
         });
 });
