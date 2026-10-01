@@ -1,0 +1,40 @@
+---
+import type { Lang } from "../data/types";
+import { SITE_REPOS, pathFor, slugOf, totalCommits } from "../data/site";
+import { translate } from "../lib/i18n";
+import TopBar from "./TopBar.astro";
+import Footer from "./Footer.astro";
+
+interface Props
+{
+        lang: Lang;
+}
+
+const { lang } = Astro.props;
+const repos = Object.entries(SITE_REPOS).sort((a, b) => b[1].last.localeCompare(a[1].last));
+---
+<TopBar lang={lang} path="/projects/" />
+<h1>{translate(lang, "site.allRepos")}</h1>
+<div class="table-wrap">
+        <table class="repos">
+                <thead>
+                        <tr>
+                                <th scope="col">{translate(lang, "site.repo")}</th>
+                                <th scope="col">{translate(lang, "f.lang")}</th>
+                                <th scope="col">{translate(lang, "f.last")}</th>
+                                <th scope="col">{translate(lang, "f.commits")}</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        {repos.map(([name, r]) => (
+                                <tr>
+                                        <td><a href={pathFor(lang, "/projects/" + slugOf(name) + "/")}>{name}</a>{r.description && <div class="muted">{r.description}</div>}</td>
+                                        <td>{r.lang}</td>
+                                        <td class="date">{r.last}</td>
+                                        <td class="num">{totalCommits(name)}</td>
+                                </tr>
+                        ))}
+                </tbody>
+        </table>
+</div>
+<Footer lang={lang} />

@@ -1,0 +1,23 @@
+---
+import type { Lang } from "../data/types";
+import { pathFor, SNAPSHOT } from "../data/site";
+import { translate } from "../lib/i18n";
+
+interface Props
+{
+        lang: Lang;
+        path: string;
+}
+
+const { lang, path } = Astro.props;
+const other: Lang = lang === "pl" ? "en" : "pl";
+---
+<header class="top">
+        <a class="home" href={pathFor(lang, "/")}><i aria-hidden="true"></i>NoXsoftware</a>
+        <nav aria-label="Site">
+                <a href={pathFor(lang, "/projects/")}>{translate(lang, "site.projects")}</a>
+                <a href={"https://github.com/" + SNAPSHOT.user}>GitHub</a>
+                <a href={pathFor(other, path)} hreflang={other} lang={other}>{translate(lang, "site.otherLang")}</a>
+        </nav>
+        <button class="to-desktop" type="button" data-to-desktop hidden>{translate(lang, "site.openDesktop")}</button>
+</header>

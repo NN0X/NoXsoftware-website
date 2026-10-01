@@ -1,0 +1,50 @@
+/* Shared tokens. The desktop is dwm-flavoured; the plain pages reuse the same palette and type. */
+:root
+{
+        color-scheme: dark;
+        --logo: url("/logo-mask.png");
+        --bg: #0b0910;
+        --bar: #0b0910;
+        --fg: #ece6f4;
+        --dim: #aaa1b9;
+        --faint: #746b86;
+        --sel: #8d52e6;
+        --norm: #2f283b;
+        --win: #120e18;
+        --win-2: #1b1623;
+        --line: #2a2334;
+        --purple: #c6a4ff;
+        --green: #9bdca9;
+        --yellow: #f0cd86;
+        --red: #f48a93;
+        --blue: #98b9f9;
+        --cyan: #8fdede;
+        --f-ui: "Ubuntu Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); }
+html.desktop, html.desktop body { overflow: hidden; }
+html.desktop body { display: flex; flex-direction: column; }
+html.desktop main.plain { display: none; }
+.os[hidden] { display: none !important; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--purple); outline-offset: 1px; }
+::selection { background: var(--sel); color: #fff; }
+a { color: var(--blue); text-underline-offset: 2px; }
+* { scrollbar-width: thin; scrollbar-color: var(--norm) transparent; }
+pre { margin: 0; font: inherit; white-space: pre; }
+.p { color: var(--purple); } .g { color: var(--green); } .y { color: var(--yellow); }
+.r { color: var(--red); } .bl { color: var(--blue); } .c { color: var(--cyan); } .d { color: var(--dim); } .f { color: var(--faint); }
+.b { font-weight: 700; }
+
+/* syntax colours and the activity chart, used by both the plain pages and the desktop */
+.s-kw { color: var(--purple); } .s-str { color: var(--green); } .s-num { color: var(--yellow); }
+.s-com { color: var(--faint); font-style: italic; } .s-fn { color: var(--blue); } .s-ty { color: var(--cyan); } .s-mac { color: var(--red); }
+.chart, .chart-x { display: grid; grid-template-columns: repeat(var(--n, 29), minmax(0, 1fr)); gap: 3px; max-width: 64ch; padding-left: 1ch; }
+.chart { height: 5.5em; grid-template-rows: 100%; align-items: end; border-bottom: 1px solid var(--line); margin-top: 1.4em; }
+.chart i { display: block; position: relative; background: var(--norm); border-radius: 2px 2px 0 0; }
+.chart i.on { background: linear-gradient(var(--purple), var(--sel)); }
+.chart i b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); font-size: 0.8em; color: var(--yellow); }
+.chart-x { color: var(--faint); font-size: 0.85em; }
+.chart-x span { white-space: nowrap; }

@@ -1,0 +1,31 @@
+---
+import type { Lang } from "../data/types";
+import { PROJECTS, SITE_REPOS, pathFor, projectTexts } from "../data/site";
+import { translate } from "../lib/i18n";
+import TopBar from "./TopBar.astro";
+import Footer from "./Footer.astro";
+
+interface Props
+{
+        lang: Lang;
+}
+
+const { lang } = Astro.props;
+const texts = await projectTexts();
+---
+<TopBar lang={lang} path="/" />
+<h1>NoX</h1>
+<p class="lede">{translate(lang, "site.tagline")}</p>
+<h2>{translate(lang, "site.projects")}</h2>
+<div class="featured">
+        {PROJECTS.map((p) => (
+                <a href={pathFor(lang, "/projects/" + p.slug + "/")}>
+                        <span class="n">{p.name}</span>
+                        <span class="s">{texts[p.slug]?.[lang].sub}</span>
+                        <span class="l">{SITE_REPOS[p.repo]?.lang}</span>
+                        <span class="t">{SITE_REPOS[p.repo]?.last.slice(0, 7)}</span>
+                </a>
+        ))}
+</div>
+<p><a href={pathFor(lang, "/projects/")}>{translate(lang, "site.allRepos")} ({Object.keys(SITE_REPOS).length}) →</a></p>
+<Footer lang={lang} />

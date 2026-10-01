@@ -1,0 +1,73 @@
+{
+        "githubUser": "NN0X",
+        "excludeRepos": ["NN0X", "Rulesets"],
+        "projects": [
+                {
+                        "slug": "sulla",
+                        "repo": "ProjectSulla",
+                        "name": "Sulla",
+                        "key": "s",
+                        "license": "MIT",
+                        "excerpt": { "path": "src/gates.cpp", "from": 26, "to": 44, "lang": "cpp" }
+                },
+                {
+                        "slug": "tdc2",
+                        "repo": "TDC2",
+                        "name": "TDC2",
+                        "key": "t",
+                        "license": "MIT",
+                        "authors": "Tomasz Sarkowicz, Piotr Sus, Michał Siudut",
+                        "excerpt": { "path": "src/pqldp/pqldp_antireplay.c", "from": 11, "to": 22, "lang": "c" }
+                },
+                {
+                        "slug": "maiora",
+                        "repo": "Maiora",
+                        "name": "Maiora",
+                        "key": "m",
+                        "license": "MIT / CC BY-ND 4.0",
+                        "excerpt": { "path": "testing/0-hello-world/main.mai", "from": 1, "to": 8, "lang": "mai" }
+                },
+                {
+                        "slug": "cicero",
+                        "repo": "CiceroTokenizer",
+                        "name": "Cicero",
+                        "key": "c",
+                        "license": "Apache 2.0 + Commons Clause",
+                        "demo": "cicero",
+                        "excerpt": { "path": "src/tokenizer.cpp", "from": 20, "to": 40, "lang": "cpp" }
+                },
+                {
+                        "slug": "brutus",
+                        "repo": "Brutus-Encryption",
+                        "name": "Brutus",
+                        "key": "b",
+                        "license": "Apache 2.0 + Commons Clause",
+                        "demo": "brutus",
+                        "excerpt": { "path": "src/brutus.cpp", "from": 10, "to": 15, "lang": "cpp" }
+                },
+                {
+                        "slug": "sybilla",
+                        "repo": "ProjectSybilla",
+                        "name": "Sybilla",
+                        "key": "y",
+                        "license": "MIT",
+                        "excerpt": { "path": "src/game.cpp", "from": 107, "to": 124, "lang": "cpp" }
+                },
+                {
+                        "slug": "f1ratings",
+                        "repo": "F1Ratings",
+                        "name": "F1Ratings",
+                        "key": "f",
+                        "license": "MIT",
+                        "excerpt": { "path": "f1ratings/compute_driver.py", "from": 5, "to": 18, "lang": "py" }
+                },
+                {
+                        "slug": "programmar",
+                        "repo": "Programmar",
+                        "name": "Programmar",
+                        "key": "p",
+                        "license": "MIT",
+                        "excerpt": { "path": "src/controllers/AppController.php", "from": 1, "to": 20, "lang": "php" }
+                }
+        ]
+}

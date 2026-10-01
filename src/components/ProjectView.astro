@@ -1,0 +1,65 @@
+---
+import type { Lang } from "../data/types";
+import { PROJECTS, SITE_REPOS, SNAPSHOT, pathFor, projectTexts, slugOf, totalCommits } from "../data/site";
+import { translate } from "../lib/i18n";
+import { activityChart, monthRange } from "../lib/activity";
+import { highlight } from "../lib/highlight";
+import TopBar from "./TopBar.astro";
+import Footer from "./Footer.astro";
+
+interface Props
+{
+        lang: Lang;
+        repo: string;
+}
+
+const { lang, repo } = Astro.props;
+const r = SITE_REPOS[repo]!;
+const config = PROJECTS.find((p) => p.repo === repo);
+const text = config ? (await projectTexts())[config.slug]?.[lang] : undefined;
+const months = monthRange(SNAPSHOT.generated);
+const peak = Object.entries(r.activity).sort((a, b) => b[1] - a[1])[0] ?? ["-", 0];
+const gh = "https://github.com/" + SNAPSHOT.user + "/" + repo;
+const facts: [string, string][] = [
+        [translate(lang, "f.lang"), r.lang || "-"],
+        [translate(lang, "f.commits"), String(totalCommits(repo))],
+        [translate(lang, "f.last"), r.last],
+        [translate(lang, "f.peak"), peak[1] + " · " + peak[0]]
+];
+if (config?.license)
+{
+        facts.push([translate(lang, "f.lic"), config.license]);
+}
+if (config?.authors)
+{
+        facts.push([translate(lang, "f.authors"), config.authors]);
+}
+const code = r.excerpt ? highlight(r.excerpt.code, r.excerpt.lang) : [];
+---
+<TopBar lang={lang} path={"/projects/" + slugOf(repo) + "/"} />
+<p><a href={pathFor(lang, "/projects/")}>{translate(lang, "site.back")}</a></p>
+<h1>{config?.name ?? repo}</h1>
+<p class="lede">{text?.sub ?? r.description}</p>
+{text ? <div class="prose" set:html={text.html} /> : <p class="muted">{translate(lang, "site.noWriteup")}</p>}
+<h2>{translate(lang, "md.glance")}</h2>
+<dl class="facts">
+        {facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+</dl>
+<Fragment set:html={activityChart(r.activity, months, translate(lang, "chart"))} />
+{r.excerpt && (
+        <>
+                <h2>{translate(lang, "site.code")}</h2>
+                <p class="muted"><a href={gh + "/blob/HEAD/" + r.excerpt.path}>{r.excerpt.path}</a></p>
+                <div class="code" style={"--start:" + (r.excerpt.from - 1)}>
+                        <ol>{code.map((line) => <li set:html={line} />)}</ol>
+                </div>
+        </>
+)}
+<h2>{translate(lang, "site.recent")}</h2>
+<ul class="commits">
+        {r.log.map(([hash, date, msg]) => (
+                <li><a class="h" href={gh + "/commit/" + hash}>{hash}</a><span class="dt">{date}</span><span>{msg}</span></li>
+        ))}
+</ul>
+<p><a href={gh}>github.com/{SNAPSHOT.user}/{repo} ↗</a></p>
+<Footer lang={lang} />

@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NotFoundView from "../components/NotFoundView.astro";
+import { desktopData } from "../data/site";
+---
+<Layout lang="en" title="404 — NoXsoftware" description="Page not found" path="/404/" desktop={await desktopData("en")} notFound>
+        <NotFoundView />
+</Layout>
