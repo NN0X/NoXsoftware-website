@@ -151,6 +151,25 @@
 .f1 tr:nth-child(even) td { background: rgba(255, 255, 255, 0.025); }
 .f1 .bar { display: inline-block; height: 0.7em; background: linear-gradient(90deg, var(--sel), var(--purple)); border-radius: 1px; }
 .f1 .tw { overflow-x: auto; }
+.f1 .info { white-space: pre-wrap; margin-top: 2px; }
+.f1 .head { white-space: pre-wrap; }
+.f1 { container-type: inline-size; }
+@container (max-width: 520px)
+{
+        .f1 td:nth-child(5), .f1 th:nth-child(5) { display: none; }
+        .f1 td, .f1 th { padding-inline: 5px; }
+}
+.f1 .tabs .gap { width: 10px; }
+.f1 .search { flex: 1; min-width: 12ch; max-width: 28ch; background: var(--win-2); border: 1px solid var(--line); padding: 0 8px; outline: none; }
+.f1 .search:focus { border-color: var(--purple); }
+.f1 th[tabindex]:focus-visible { outline: 1px solid var(--yellow); outline-offset: -1px; }
+.f1 tr.row { cursor: pointer; }
+.f1 tr.row:hover td, .f1 tr.row:focus-visible td { background: var(--win-2); }
+.f1 tr.row.on td { background: var(--sel); color: #fff; }
+.f1 tr.row.on td .f, .f1 tr.row.on td .d { color: #e6d8ff; }
+.f1 tr.row:focus-visible { outline: none; }
+.f1 .plot { margin-top: 12px; max-width: 76ch; }
+.f1 .plot .ph { margin-bottom: 4px; }
 
 /* ---------------- firefox ---------------- */
 .ff { padding: 0 !important; display: grid; grid-template-rows: auto auto minmax(0, 1fr); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; }

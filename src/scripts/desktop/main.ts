@@ -8,6 +8,7 @@ import { setOs, watchKonami } from "./fx";
 import "./windows/zsh";
 import "./windows/htop";
 import "./windows/nvim";
+import "./windows/f1";
 import "./windows/firefox";
 
 declare global
@@ -125,6 +126,7 @@ export function boot(): void
                 const term = spawn("zsh", 1);
                 spawn("htop", 1);
                 spawn("nvim", 2);
+                spawn("f1", 3);
                 spawn("firefox", 9);
                 S.focused[1] = term;
                 renderHint();

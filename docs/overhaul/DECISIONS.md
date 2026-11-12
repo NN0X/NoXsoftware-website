@@ -8,7 +8,7 @@ real site was built from; `gen_repo_data.py` is the throwaway script that fed it
 
 1. Astro site, build-time repo data, plain pages in EN/PL, the dwm desktop (zsh, htop, nvim, Firefox), CI
 2. WebAssembly builds of Brutus and Cicero replacing the demo mocks
-3. F1Ratings page, ported from the unmerged `projects-page` branch, data generated from the F1Ratings repo
+3. F1Ratings tables: the Pi re-runs F1Ratings on a timer and publishes `/data/f1.json`; the site reads it at runtime
 4. Easter-egg pages with re-encoded media, deploy workflow and the Pi pull script
 
 ## Stack and hosting
@@ -17,6 +17,7 @@ real site was built from; `gen_repo_data.py` is the throwaway script that fed it
 |---|---|
 | Framework | Astro + TypeScript, static output served by Apache on the Raspberry Pi |
 | Demos | Brutus and Cicero compiled to WebAssembly (Emscripten) and run in the browser; PHP `shell_exec` endpoints removed |
+| F1 ratings | A systemd timer on the Pi (Mon + Thu) clones or pulls F1Ratings, runs it unmodified on the public Kaggle dataset and atomically replaces `/data/f1.json`, which lives outside the deployed site. Ratings stay current without a rebuild; a failed run keeps the last good file |
 | Deploy | GitHub Actions builds `dist/` and publishes it; the Pi pulls and swaps it in atomically (no inbound access to the home network) |
 | Media | Easter eggs kept; videos and GIFs re-encoded much smaller; originals stay on the `legacy` branch and in history |
 | Languages | English and Polish, `/pl/…` URLs for the static pages, auto-detected from the browser and remembered |
@@ -47,7 +48,7 @@ real site was built from; `gen_repo_data.py` is the throwaway script that fed it
 |---|---|---|
 | Projects | htop row, nvim dashboard, dmenu, `ls` output | `open <project> [readme\|code\|log\|demo]`, `nvim`, `cat README.md` |
 | Demos | demo tab | `cicero <text>`, `brutus <key> <text>` |
-| F1 ratings | tag `f1`, sort by header | `f1ratings [--teams] [--sort name\|peak\|now\|delta]` |
+| F1 ratings | tag `f1`, headers sort, rows plot, nvim `ratings` tab, `/projects/f1ratings/` | `f1ratings [--teams] [--all-time] [--sort name\|peak\|now\|delta] [plot <name>]`, `f1ratings print\|change <name>` (or `python main.py …` in `~/projects/F1Ratings`) |
 | Browser | tag `www`, bookmarks, links | `firefox [url]` |
 | Contact | Firefox new tab | `man nox`, `cat contact.txt`, `mail` |
 | Language | `[us]`/`[pl]` in the bar | `setxkbmap pl`, `export LANG=pl_PL.UTF-8`, `:lang pl` |

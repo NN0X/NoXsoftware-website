@@ -33,9 +33,9 @@ const STRINGS = {
                 "h.sec": "jump to a tab: readme, code, log, demo", "h.demo": "run a demo right here", "h.htop": "every repo as a process",
                 "h.ff": "a (partly) working browser", "h.man": "who is this", "h.contact": "how to reach me", "h.git": "latest commits everywhere",
                 "h.lang": "switch language (or click us/pl in the bar)", "h.dwmc": "drive dwm from the shell", "h.fun": "important tools",
-                "h.classic": "classics", "h.f1": "XRating", "h.secret": "…and a few more you'll have to find yourself. Click any yellow command to run it.",
+                "h.classic": "classics", "h.f1": "XRating tables, or print them like the CLI", "h.secret": "…and a few more you'll have to find yourself. Click any yellow command to run it.",
                 "dash.all": "every repo, sorted by commits, in htop", "dash.loaded": "nvim loaded {n} projects in {ms} ms",
-                "md.glance": "At a glance", "md.links": "Links", "md.latest": "latest commit", "md.try": "→ try the demo tab above",
+                "md.glance": "At a glance", "md.links": "Links", "md.latest": "latest commit", "md.try": "→ try the demo tab above", "md.ratings": "→ the live tables are in the ratings tab above (tag f1)",
                 "md.nowrite": "No write-up yet. This shows what GitHub knows about the repository.",
                 "f.lang": "language", "f.lic": "licence", "f.commits": "commits", "f.last": "last push", "f.peak": "peak month", "f.authors": "authors",
                 "chart": "commits per month",
@@ -56,7 +56,19 @@ const STRINGS = {
                 "wx": "Kraków. Temperature from Open-Meteo, cached for 10 minutes like get_weather.sh.",
                 "kbd": "Keyboard layout = site language. Click to switch.",
                 "lang.switched": "Language: English",
-                "f1.soon": "The XRating tables arrive with the F1Ratings page (phase 3). Until then, here is the write-up."
+                "f1.drivers": "drivers", "f1.teams": "teams", "f1.grid": "current grid", "f1.all": "all time", "f1.search": "search",
+                "f1.driver": "DRIVER", "f1.team": "TEAM", "f1.now": "NOW", "f1.peak": "PEAK", "f1.sort": "a header to sort",
+                "f1.pick": "Click a row to plot its rating history.", "f1.empty": "Nothing matches.",
+                "f1.history": "now {n} · peak {p} on {d}", "f1.peakOn": "peak on {d}",
+                "f1.noHistory": "No history exported for this one: only the current grid, every team and the all-time top 40 drivers get a chart.",
+                "f1.lastRace": "last race: {r}, {d}", "f1.generated": "computed {d} by",
+                "f1.sample": "# sample data: synthetic results generated for development, not real F1",
+                "f1.goat": "XRating: tuned so that Fangio is the GOAT (9d64dcf)",
+                "f1.loading": "loading /data/f1.json...", "f1.failed": "Could not load the ratings: {e}", "f1.retry": "retry",
+                "f1.missing": "The ratings have not been generated yet. The Pi recomputes them after every race weekend.",
+                "f1.onPi": "on the server", "f1.locally": "locally, with synthetic data",
+                "f1.plainTitle": "XRating", "f1.plainNote": "Computed by F1Ratings from the Kaggle Formula 1 dataset and refreshed after every race weekend. Click a column to sort.",
+                "f1.noscript": "The ratings table needs JavaScript. The raw data is at /data/f1.json."
         },
         pl:
         {
@@ -89,9 +101,9 @@ const STRINGS = {
                 "h.sec": "skok do zakładki: readme, code, log, demo", "h.demo": "uruchom demo tutaj", "h.htop": "każde repo jako proces",
                 "h.ff": "(częściowo) działająca przeglądarka", "h.man": "kto to jest", "h.contact": "jak się ze mną skontaktować", "h.git": "najnowsze commity",
                 "h.lang": "zmień język (albo kliknij us/pl na pasku)", "h.dwmc": "steruj dwm z powłoki", "h.fun": "ważne narzędzia",
-                "h.classic": "klasyka", "h.f1": "XRating", "h.secret": "…i jeszcze kilka do samodzielnego odkrycia. Kliknij żółte polecenie, aby je uruchomić.",
+                "h.classic": "klasyka", "h.f1": "tabele XRating albo wydruk jak w CLI", "h.secret": "…i jeszcze kilka do samodzielnego odkrycia. Kliknij żółte polecenie, aby je uruchomić.",
                 "dash.all": "każde repo, posortowane po commitach, w htop", "dash.loaded": "nvim wczytał {n} projektów w {ms} ms",
-                "md.glance": "W skrócie", "md.links": "Linki", "md.latest": "ostatni commit", "md.try": "→ wypróbuj zakładkę demo powyżej",
+                "md.glance": "W skrócie", "md.links": "Linki", "md.latest": "ostatni commit", "md.try": "→ wypróbuj zakładkę demo powyżej", "md.ratings": "→ aktualne tabele są w zakładce ratings powyżej (tag f1)",
                 "md.nowrite": "Brak opisu. Tu widać, co GitHub wie o repozytorium.",
                 "f.lang": "język", "f.lic": "licencja", "f.commits": "commity", "f.last": "ostatni push", "f.peak": "szczyt", "f.authors": "autorzy",
                 "chart": "commity miesięcznie",
@@ -112,7 +124,19 @@ const STRINGS = {
                 "wx": "Kraków. Temperatura z Open-Meteo, z pamięcią podręczną 10 minut jak w get_weather.sh.",
                 "kbd": "Układ klawiatury = język strony. Kliknij, aby zmienić.",
                 "lang.switched": "Język: polski",
-                "f1.soon": "Tabele XRating pojawią się razem ze stroną F1Ratings (etap 3). Do tego czasu jest opis."
+                "f1.drivers": "kierowcy", "f1.teams": "zespoły", "f1.grid": "obecna stawka", "f1.all": "wszech czasów", "f1.search": "szukaj",
+                "f1.driver": "KIEROWCA", "f1.team": "ZESPÓŁ", "f1.now": "TERAZ", "f1.peak": "SZCZYT", "f1.sort": "nagłówek, aby sortować",
+                "f1.pick": "Kliknij wiersz, aby narysować historię ratingu.", "f1.empty": "Nic nie pasuje.",
+                "f1.history": "teraz {n} · szczyt {p} w dniu {d}", "f1.peakOn": "szczyt w dniu {d}",
+                "f1.noHistory": "Brak historii dla tej pozycji: wykres mają tylko obecna stawka, wszystkie zespoły i 40 najlepszych kierowców wszech czasów.",
+                "f1.lastRace": "ostatni wyścig: {r}, {d}", "f1.generated": "policzone {d} przez",
+                "f1.sample": "# dane przykładowe: syntetyczne wyniki do testów, nie prawdziwa F1",
+                "f1.goat": "XRating: dostrojony tak, by Fangio był GOAT-em (9d64dcf)",
+                "f1.loading": "wczytywanie /data/f1.json...", "f1.failed": "Nie udało się wczytać ratingów: {e}", "f1.retry": "ponów",
+                "f1.missing": "Ratingi nie zostały jeszcze wygenerowane. Raspberry Pi przelicza je po każdym weekendzie wyścigowym.",
+                "f1.onPi": "na serwerze", "f1.locally": "lokalnie, z danymi syntetycznymi",
+                "f1.plainTitle": "XRating", "f1.plainNote": "Policzone przez F1Ratings ze zbioru danych Formuły 1 z Kaggle i odświeżane po każdym weekendzie wyścigowym. Kliknij kolumnę, aby sortować.",
+                "f1.noscript": "Tabela ratingów wymaga JavaScriptu. Surowe dane są pod /data/f1.json."
         }
 } as const;
 

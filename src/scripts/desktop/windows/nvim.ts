@@ -248,9 +248,14 @@ function render(body: HTMLDivElement, w: Win): void
                 {
                         buffers.push(["demo", "demo", "▶"]);
                 }
+                if (m.slug === "f1ratings")
+                {
+                        // the tables live in their own window on tag f1; this buffer just jumps there
+                        buffers.push(["ratings", "ratings", "▤"]);
+                }
                 body.classList.toggle("notree", narrow() || window.innerWidth < 1200 || !info.tree.length);
                 cmd.placeholder = t("nv.ph");
-                if (!show(section ?? "readme"))
+                if (!show(section ?? "readme") || section === "ratings")
                 {
                         show("readme");
                 }
@@ -298,6 +303,10 @@ function render(body: HTMLDivElement, w: Win): void
                 if (m.demo)
                 {
                         rows.push(textRow(""), { html: "<span class=\"y b\">" + esc(t("md.try")) + "</span>" });
+                }
+                if (m.slug === "f1ratings")
+                {
+                        rows.push(textRow(""), { html: "<span class=\"y b\">" + esc(t("md.ratings")) + "</span>" });
                 }
                 return rows;
         }
@@ -400,6 +409,11 @@ function render(body: HTMLDivElement, w: Win): void
                 if (!repo || !buffers.some((b) => b[0] === name))
                 {
                         return false;
+                }
+                if (name === "ratings")
+                {
+                        openSingle("f1", 3);
+                        return true;
                 }
                 current = name;
                 tabs();
@@ -531,7 +545,7 @@ function render(body: HTMLDivElement, w: Win): void
                 }
                 if (v === "help")
                 {
-                        msg.textContent = ":q · :e readme|code|log|demo|<project> · :Neotree · :lang pl|en";
+                        msg.textContent = ":q · :e readme|code|log|demo|ratings|<project> · :Neotree · :lang pl|en";
                         return;
                 }
                 if (/^Neotree/.test(v) && repo)

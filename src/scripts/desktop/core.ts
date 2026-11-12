@@ -1,5 +1,6 @@
 // Shared state of the desktop: the embedded data, the window list and small helpers every module uses.
 import type { DesktopData, Lang, ProjectConfig, ProjectText, Repo } from "../../data/types";
+import type { F1Options } from "../../lib/f1";
 import { translate, type StringKey } from "../../lib/i18n";
 import { monthRange } from "../../lib/activity";
 
@@ -25,6 +26,7 @@ export interface Win
         open?: (repo: string, section?: string) => void;
         home?: () => void;
         go?: (url: string) => void;
+        f1?: (o: F1Options) => void;
 }
 
 export interface ProjectMeta

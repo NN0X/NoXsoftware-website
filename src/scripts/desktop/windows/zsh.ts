@@ -10,6 +10,8 @@ import { esc } from "../../../lib/esc";
 import { lev } from "../../../lib/lev";
 import { loadBrutus, tokenize } from "../demos";
 import { BRUTUS_MIN_KEY } from "../../../lib/cicero";
+import { changeLine, cliLine, findEntry, gridLines, type F1Data, type F1Entry, type F1Options, type F1Sort } from "../../../lib/f1";
+import { F1Missing, loadF1 } from "../../f1load";
 import { MAN_PAGE, type StringKey } from "../../../lib/i18n";
 
 type Command = (args: string[]) => number | void;
@@ -355,11 +357,58 @@ function render(body: HTMLDivElement, w: Win): void
                 print(esc(reply ?? DOCTOR_DEFAULT[Math.floor(Math.random() * DOCTOR_DEFAULT.length)]), "p");
         }
 
+        // `f1ratings print|change`, printing exactly what F1Ratings' main.py prints
+        function f1Print(sub: "print" | "change", names: string[]): void
+        {
+                const out = print(esc(t("f1.loading")), "f");
+                const lookup = (d: F1Data, name: string): F1Entry | undefined => findEntry(d.drivers, name) ?? findEntry(d.teams, name);
+                loadF1().then((d) =>
+                {
+                        const lines: string[] = [];
+                        if (sub === "change")
+                        {
+                                const e = lookup(d, names[0] ?? "");
+                                lines.push(e ? esc(changeLine(e)) : "Driver or team '" + esc(names[0] ?? "") + "' not found.");
+                        }
+                        else if (!names.length)
+                        {
+                                lines.push("Today's grid:", ...gridLines(d.drivers).map(esc), "Today's teams:", ...gridLines(d.teams).map(esc));
+                        }
+                        else
+                        {
+                                // main.py takes one name per argument; "Max Verstappen" needs quotes there, here either works
+                                const whole = lookup(d, names.join(" "));
+                                for (const e of whole ? [whole] : names.map((n) => lookup(d, n)))
+                                {
+                                        if (!e)
+                                        {
+                                                lines.push("Driver or team not found.");
+                                                continue;
+                                        }
+                                        lines.push("Rating Progression for " + esc(e.name) + ":");
+                                        lines.push(...(e.history ?? []).map(([date, rating]) => "Rating: " + rating + ", Date: " + date));
+                                        lines.push("<span class=\"f\"># " + (e.history ? "one point per season, every race of the last 30" : "no history exported; current:") + "</span>", esc(cliLine(e)));
+                                }
+                        }
+                        if (d.fixture)
+                        {
+                                lines.push("<span class=\"y\">" + esc(t("f1.sample")) + "</span>");
+                        }
+                        out.className = "";
+                        out.innerHTML = "<pre>" + lines.join("\n") + "</pre>";
+                        scroll();
+                }).catch((err: Error) =>
+                {
+                        out.className = err instanceof F1Missing ? "y" : "r";
+                        out.textContent = err instanceof F1Missing ? t("f1.missing") : t("f1.failed", { e: err.message });
+                });
+        }
+
         const CMDS: Record<string, Command> = {
                 help: () =>
                 {
                         print("<span class=\"b\">" + esc(t("help.title")) + "</span>");
-                        const rows: [string, StringKey][] = [["ls", "h.ls"], ["projects", "h.cd"], ["open sulla", "h.open"], ["open cicero demo", "h.sec"], ["cicero great product", "h.demo"], ["brutus et-tu do not trust me", "h.demo"], ["htop", "h.htop"], ["firefox noxsoftware.pl", "h.ff"], ["man nox", "h.man"], ["mail", "h.contact"], ["git log", "h.git"], [S.lang === "pl" ? "setxkbmap us" : "setxkbmap pl", "h.lang"], ["dwmc setlayout monocle", "h.dwmc"], ["fortune", "h.fun"], ["cowsay", "h.fun"], ["sl", "h.fun"], ["neofetch", "h.classic"], ["clear", "h.classic"]];
+                        const rows: [string, StringKey][] = [["ls", "h.ls"], ["projects", "h.cd"], ["open sulla", "h.open"], ["open cicero demo", "h.sec"], ["cicero great product", "h.demo"], ["brutus et-tu do not trust me", "h.demo"], ["f1ratings print", "h.f1"], ["htop", "h.htop"], ["firefox noxsoftware.pl", "h.ff"], ["man nox", "h.man"], ["mail", "h.contact"], ["git log", "h.git"], [S.lang === "pl" ? "setxkbmap us" : "setxkbmap pl", "h.lang"], ["dwmc setlayout monocle", "h.dwmc"], ["fortune", "h.fun"], ["cowsay", "h.fun"], ["sl", "h.fun"], ["neofetch", "h.classic"], ["clear", "h.classic"]];
                         print(rows.map(([c, d]) => "  " + runBtn(c, c) + " ".repeat(Math.max(2, 32 - c.length)) + "<span class=\"d\">" + esc(t(d)) + "</span>").join("\n"));
                         print(esc(t("h.secret")), "f");
                 },
@@ -422,7 +471,7 @@ function render(body: HTMLDivElement, w: Win): void
                                 print("open: no project matches '" + esc(a[0] ?? "") + "'. try: " + runBtn("ls ~/projects", "ls ~/projects"), "r");
                                 return 1;
                         }
-                        const sections: Record<string, string> = { readme: "readme", code: "code", src: "code", log: "log", git: "log", demo: "demo" };
+                        const sections: Record<string, string> = { readme: "readme", code: "code", src: "code", log: "log", git: "log", demo: "demo", ratings: "ratings", f1: "ratings" };
                         openProject(repo, sections[(a[1] ?? "").toLowerCase()]);
                         return 0;
                 },
@@ -444,10 +493,75 @@ function render(body: HTMLDivElement, w: Win): void
                                 ff.go?.(a.join(" "));
                         }
                 },
-                f1ratings: () =>
+                f1ratings: (a) =>
                 {
-                        print(esc(t("f1.soon")), "y");
-                        openProject("F1Ratings");
+                        const [sub = "", ...names] = a;
+                        if (sub === "help" || sub === "--help" || sub === "-h")
+                        {
+                                print("Usage: f1ratings [--teams] [--all-time] [--sort name|peak|now|delta] [--asc]\n       f1ratings print [name ...]\n       f1ratings change &lt;name&gt;\n       f1ratings plot &lt;name&gt;\n  print: today's grid, or the rating progression of a driver or team\n  change: last change in rating for a driver or team\n  plot: open the chart for a driver or team\n<span class=\"f\"># same as `python main.py ...` in ~/projects/F1Ratings, minus the six-minute recompute</span>");
+                                return 0;
+                        }
+                        if (sub === "print" || sub === "change")
+                        {
+                                if (sub === "change" && names.length !== 1)
+                                {
+                                        print("Usage: change [name]\n  name: Name of the driver or team to check last change", "r");
+                                        return 1;
+                                }
+                                f1Print(sub, names);
+                                return 0;
+                        }
+                        const o: F1Options = {};
+                        for (let i = 0; i < a.length; i++)
+                        {
+                                const arg = a[i] ?? "";
+                                const [flag = "", inline] = arg.split("=", 2);
+                                if (flag === "--teams")
+                                {
+                                        o.set = "teams";
+                                }
+                                else if (flag === "--drivers")
+                                {
+                                        o.set = "drivers";
+                                }
+                                else if (flag === "--all-time" || flag === "--all")
+                                {
+                                        o.view = "all";
+                                }
+                                else if (flag === "--grid")
+                                {
+                                        o.view = "grid";
+                                }
+                                else if (flag === "--asc")
+                                {
+                                        o.ascending = true;
+                                }
+                                else if (flag === "--desc")
+                                {
+                                        o.ascending = false;
+                                }
+                                else if (flag === "--sort")
+                                {
+                                        const key = inline ?? a[++i] ?? "";
+                                        if (!["name", "peak", "now", "delta"].includes(key))
+                                        {
+                                                print("f1ratings: --sort takes name, peak, now or delta", "r");
+                                                return 1;
+                                        }
+                                        o.sort = key as F1Sort;
+                                }
+                                else if (flag === "plot")
+                                {
+                                        o.pick = a.slice(i + 1).join(" ");
+                                        break;
+                                }
+                                else
+                                {
+                                        print("f1ratings: unknown option '" + esc(arg) + "'. try: " + runBtn("f1ratings help", "f1ratings help"), "r");
+                                        return 1;
+                                }
+                        }
+                        openSingle("f1", 3).f1?.(o);
                 },
                 mail: () => void print("mail: compose in your own client → <a href=\"mailto:nox@noxsoftware.pl\">nox@noxsoftware.pl</a>\n<span class=\"f\"># plain text please; messages containing links are discarded</span>"),
                 cicero: (a) =>
@@ -628,7 +742,22 @@ function render(body: HTMLDivElement, w: Win): void
                         print("clang: error: no input files", "r");
                         return 1;
                 },
-                python: () => void print("have you tried C++?"),
+                python: (a) =>
+                {
+                        if (repoHere() === "F1Ratings" && a[0] === "main.py")
+                        {
+                                print("have you tried C++? <span class=\"f\">(running it anyway)</span>");
+                                const [sub = "", ...rest] = a.slice(1);
+                                if (sub === "gen" || sub === "load" || sub === "dump")
+                                {
+                                        print("<span class=\"f\"># the Pi already did that, see ~/projects/F1Ratings on tag f1</span>");
+                                        openSingle("f1", 3);
+                                        return 0;
+                                }
+                                return CMDS.f1ratings!(sub ? [sub, ...rest] : ["help"]);
+                        }
+                        print("have you tried C++?");
+                },
                 nano: () =>
                 {
                         print("zsh: command not found: nano. did you mean <span class=\"y\">nvim</span>?", "r");

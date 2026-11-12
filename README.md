@@ -20,12 +20,18 @@ npm run dev       # local dev server
 npm run verify    # lint, type check, tests, build (what CI runs)
 npm run data      # refresh src/data/repos.json from GitHub
 npm run wasm      # rebuild the Brutus and Cicero demos (needs Emscripten on PATH)
+npm run f1:fixture  # synthetic F1 ratings into public/data/ (needs Python 3.12+)
 ```
 
 The in-browser demos are the real C++ from Brutus-Encryption and CiceroTokenizer, compiled with
 Emscripten at the commits pinned in `scripts/build-wasm.sh`. The output in `public/wasm/` is
 committed, so the site builds without Emscripten; `tests/wasm.test.ts` checks it against the
 native CLIs.
+
+The F1 ratings are not part of the build. The Pi re-runs
+[F1Ratings](https://github.com/NN0X/F1Ratings) on a systemd timer after race weekends and publishes
+`/data/f1.json`, which the f1 window, `f1ratings` and `/projects/f1ratings/` read at runtime; see
+[`server/README.md`](server/README.md). Without the file they say the ratings are not generated yet.
 
 `npm run data` lists public repos through the GitHub API (set `GITHUB_TOKEN` to avoid rate limits),
 then reads each one with a history-only `git clone --filter=blob:none`. Where the API is not
@@ -40,10 +46,11 @@ reachable it reuses the previous list, or takes one explicitly: `npm run data --
 | `src/data/repos.json` | Generated: activity, commits, file trees and excerpts for every public repo |
 | `src/pages/` | Routes; `/pl/…` mirrors `/…` |
 | `src/components/` | The plain pages |
-| `src/scripts/desktop/` | The desktop: window manager, bar, dmenu and the zsh, htop, nvim and Firefox windows |
+| `src/scripts/desktop/` | The desktop: window manager, bar, dmenu and the zsh, htop, nvim, f1 and Firefox windows |
 | `src/lib/` | Code shared by both: highlighting, the activity chart, strings in both languages |
 | `wasm/` | Bindings that expose Brutus and Cicero to JavaScript |
 | `public/wasm/` | Generated: the compiled demos and Cicero's 2^16 dictionary |
+| `server/` | Runs on the Pi: the F1 ratings refresh (script, exporter, systemd units) |
 | `public/.htaccess` | Apache config: redirects from the old URLs, error page, cache headers |
 | `docs/overhaul/` | Design decisions and the original clickable mockup |
 
