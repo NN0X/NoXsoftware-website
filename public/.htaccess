@@ -2,6 +2,7 @@
 
 Options -Indexes
 ErrorDocument 404 /404.html
+ErrorDocument 403 /403/
 
 RewriteEngine on
 
@@ -12,11 +13,17 @@ RewriteRule ^html/proj/brutus(\.html)?$ /projects/brutus/ [R=301,L]
 RewriteRule ^html/proj/cicero(\.html)?$ /projects/cicero/ [R=301,L]
 RewriteRule ^html/proj/f1ratings(\.html)?$ /projects/f1ratings/ [R=301,L]
 
-# Easter eggs from the old site (pages arrive with the media in a later phase)
+# Easter eggs from the old site: the secret short URLs and the old page locations
 RewriteRule ^c/?$ /eggs/c/ [R=301,L]
 RewriteRule ^c\+\+isthebest/?$ /eggs/cpp/ [R=301,L]
 RewriteRule ^linux\>windowsallday/?$ /eggs/linux/ [R=301,L]
 RewriteRule ^pythonistoobadforbeingthisuseful/?$ /eggs/python/ [R=301,L]
+RewriteRule ^eggs/K/c(\.html)?$ /eggs/c/ [R=301,L]
+RewriteRule ^eggs/Kem/c\+\+(\.html)?$ /eggs/cpp/ [R=301,L]
+RewriteRule ^eggs/Bwz1l/linux(\.html)?$ /eggs/linux/ [R=301,L]
+RewriteRule ^eggs/;gtAu@/python(\.html)?$ /eggs/python/ [R=301,L]
+RewriteRule ^errors/404(\.html)?$ /404.html [R=301,L]
+RewriteRule ^errors/403(\.html)?$ /403/ [R=301,L]
 
 <IfModule mod_headers.c>
         Header always set X-Content-Type-Options "nosniff"
@@ -24,6 +31,10 @@ RewriteRule ^pythonistoobadforbeingthisuseful/?$ /eggs/python/ [R=301,L]
         # Astro fingerprints everything under /_astro/, so it can be cached forever
         <If "%{REQUEST_URI} =~ m#^/_astro/#">
                 Header set Cache-Control "public, max-age=31536000, immutable"
+        </If>
+        # the re-encoded egg media changes rarely and is not fingerprinted
+        <If "%{REQUEST_URI} =~ m#^/media/#">
+                Header set Cache-Control "public, max-age=604800"
         </If>
         <If "%{REQUEST_URI} =~ m#(\.html|/)$#">
                 Header set Cache-Control "no-cache"

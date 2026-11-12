@@ -1,7 +1,8 @@
 // The tiny filesystem the shell walks around in. Pure functions, so they can be unit-tested.
 import type { Repo } from "../../data/types";
+import { EGGS as EGG_PAGES } from "../../data/eggs";
 
-export const EGGS = ["c", "c++isthebest", "linux>windowsallday", "pythonistoobadforbeingthisuseful"];
+export const EGGS = EGG_PAGES.map((e) => e.path);
 
 const FILES: Record<string, string[]> = {
         "~": ["projects/", "contact.txt", "README.md", ".zshrc", ".eggs/"],

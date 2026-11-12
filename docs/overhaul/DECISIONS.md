@@ -18,8 +18,8 @@ real site was built from; `gen_repo_data.py` is the throwaway script that fed it
 | Framework | Astro + TypeScript, static output served by Apache on the Raspberry Pi |
 | Demos | Brutus and Cicero compiled to WebAssembly (Emscripten) and run in the browser; PHP `shell_exec` endpoints removed |
 | F1 ratings | A systemd timer on the Pi (Mon + Thu) clones or pulls F1Ratings, runs it unmodified on the public Kaggle dataset and atomically replaces `/data/f1.json`, which lives outside the deployed site. Ratings stay current without a rebuild; a failed run keeps the last good file |
-| Deploy | GitHub Actions builds `dist/` and publishes it; the Pi pulls and swaps it in atomically (no inbound access to the home network) |
-| Media | Easter eggs kept; videos and GIFs re-encoded much smaller; originals stay on the `legacy` branch and in history |
+| Deploy | Every push to `master` is built by GitHub Actions and published as the assets of one rolling `site` release (public downloads, so the Pi holds no token; a workflow artifact would have needed one). A systemd timer on the Pi polls it every 5 minutes, verifies the archive and swaps a `current` symlink atomically; the last three builds stay for `--rollback`. No inbound access to the home network |
+| Media | Easter eggs kept; videos re-encoded to 720p H.264 MP4 (73 → 18 MB, plays everywhere), GIFs to animated WebP with transparency (4.4 → 0.7 MB) by `scripts/encode-media.sh`; originals stay on the `legacy` branch |
 | Languages | English and Polish, `/pl/…` URLs for the static pages, auto-detected from the browser and remembered |
 | Static pages | Every project also exists as a plain HTML page (`/projects/<slug>`) for search engines, link sharing and no-JS visitors; the desktop loads on top |
 | Process | Phased PRs from the session branch into `dev`; `dev` → `master` by the owner |

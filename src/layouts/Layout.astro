@@ -17,12 +17,13 @@ interface Props
         path: string;
         desktop: DesktopData;
         notFound?: boolean;
+        forbidden?: boolean;
 }
 
-const { lang, title, description, path, desktop, notFound = false } = Astro.props;
+const { lang, title, description, path, desktop, notFound = false, forbidden = false } = Astro.props;
 const site = Astro.site?.toString().replace(/\/$/, "") ?? "";
 // Keep "</script>" and friends out of the inline JSON.
-const json = JSON.stringify({ ...desktop, notFound }).replace(/</g, "\\u003c");
+const json = JSON.stringify({ ...desktop, notFound, forbidden }).replace(/</g, "\\u003c");
 ---
 <!doctype html>
 <html lang={lang}>
@@ -33,10 +34,10 @@ const json = JSON.stringify({ ...desktop, notFound }).replace(/</g, "\\u003c");
                 <meta name="description" content={description} />
                 <meta name="theme-color" content="#0b0910" />
                 <meta name="author" content="NoX" />
-                {!notFound && <link rel="canonical" href={site + pathFor(lang, path)} />}
-                {!notFound && <link rel="alternate" hreflang="en" href={site + pathFor("en", path)} />}
-                {!notFound && <link rel="alternate" hreflang="pl" href={site + pathFor("pl", path)} />}
-                {!notFound && <link rel="alternate" hreflang="x-default" href={site + pathFor("en", path)} />}
+                {!(notFound || forbidden) && <link rel="canonical" href={site + pathFor(lang, path)} />}
+                {!(notFound || forbidden) && <link rel="alternate" hreflang="en" href={site + pathFor("en", path)} />}
+                {!(notFound || forbidden) && <link rel="alternate" hreflang="pl" href={site + pathFor("pl", path)} />}
+                {!(notFound || forbidden) && <link rel="alternate" hreflang="x-default" href={site + pathFor("en", path)} />}
                 <link rel="icon" href="/favicon.png" type="image/png" />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />

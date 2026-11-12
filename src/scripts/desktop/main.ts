@@ -141,6 +141,10 @@ export function boot(): void
                 {
                         openSingle("htop", 1);
                 }
+                else if (data.url)
+                {
+                        openSingle("firefox", 9).go?.(data.url);
+                }
                 else
                 {
                         view(1);

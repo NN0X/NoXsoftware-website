@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ForbiddenView from "../components/ForbiddenView.astro";
+import { desktopData } from "../data/site";
+---
+<Layout lang="en" title="403 — NoXsoftware" description="Page is forbidden" path="/403/" desktop={await desktopData("en")} forbidden>
+        <ForbiddenView />
+</Layout>
