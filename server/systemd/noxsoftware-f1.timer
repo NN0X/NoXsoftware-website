@@ -1,0 +1,11 @@
+[Unit]
+Description=Regenerate the F1 ratings after race weekends
+
+[Timer]
+# Monday picks up Sunday's race; Thursday catches late dataset updates.
+OnCalendar=Mon,Thu *-*-* 06:00:00 Europe/Warsaw
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

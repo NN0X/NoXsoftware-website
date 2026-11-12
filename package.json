@@ -15,7 +15,9 @@
     "test": "vitest run",
     "data": "node scripts/fetch-repos.mjs",
     "verify": "npm run lint && npm run check && npm run test && npm run build",
-    "wasm": "bash scripts/build-wasm.sh"
+    "wasm": "bash scripts/build-wasm.sh",
+    "f1": "F1_OUT=public/data/f1.json bash server/f1/refresh.sh",
+    "f1:fixture": "F1_OUT=public/data/f1.json bash server/f1/refresh.sh --fixture"
   },
   "dependencies": {
     "@fontsource/ubuntu-mono": "^5.3.0",

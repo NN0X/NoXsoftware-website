@@ -1,0 +1,13 @@
+[Unit]
+Description=Regenerate the F1 ratings for noxsoftware.pl
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=noxsoftware
+Environment=F1_OUT=/var/www/noxsoftware-data/f1.json
+ExecStart=/opt/noxsoftware/server/f1/refresh.sh
+Nice=10
+# the whole history is recomputed every time; on a Pi that takes a while
+TimeoutStartSec=2h
