@@ -35,12 +35,23 @@ if (config?.authors)
         facts.push([translate(lang, "f.authors"), config.authors]);
 }
 const code = r.excerpt ? highlight(r.excerpt.code, r.excerpt.lang) : [];
+// F1Ratings gets its live tables, filled in the browser from /data/f1.json (see server/README.md)
+const isF1 = config?.slug === "f1ratings";
 ---
 <TopBar lang={lang} path={"/projects/" + slugOf(repo) + "/"} />
 <p><a href={pathFor(lang, "/projects/")}>{translate(lang, "site.back")}</a></p>
 <h1>{config?.name ?? repo}</h1>
 <p class="lede">{text?.sub ?? r.description}</p>
 {text ? <div class="prose" set:html={text.html} /> : <p class="muted">{translate(lang, "site.noWriteup")}</p>}
+{isF1 && (
+        <section class="xrating" data-f1 data-lang={lang} aria-labelledby="xr-title">
+                <h2 id="xr-title">{translate(lang, "f1.plainTitle")}</h2>
+                <p class="muted">{translate(lang, "f1.plainNote")}</p>
+                <div data-f1-out>
+                        <noscript><p class="muted">{translate(lang, "f1.noscript")}</p></noscript>
+                </div>
+        </section>
+)}
 <h2>{translate(lang, "md.glance")}</h2>
 <dl class="facts">
         {facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
@@ -63,3 +74,6 @@ const code = r.excerpt ? highlight(r.excerpt.code, r.excerpt.lang) : [];
 </ul>
 <p><a href={gh}>github.com/{SNAPSHOT.user}/{repo} ↗</a></p>
 <Footer lang={lang} />
+<script>
+        import "../scripts/f1plain";
+</script>

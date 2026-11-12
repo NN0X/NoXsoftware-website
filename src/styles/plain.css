@@ -59,6 +59,24 @@ main.plain
 .plain .commits .h { color: var(--yellow); }
 .plain .commits .dt { color: var(--faint); }
 
+.plain .xrating { display: grid; gap: 12px; }
+.plain .xrating [data-f1-out] { display: grid; gap: 10px; }
+.plain .xr-tabs { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--f-ui); }
+.plain .xr-tabs span { width: 10px; }
+.plain .xr-tabs button { border: 1px solid var(--norm); background: transparent; color: var(--fg); padding: 2px 10px; border-radius: 4px; cursor: pointer; font: inherit; }
+.plain .xr-tabs button[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: var(--bg); font-weight: 700; }
+.plain .xr-table th button { all: unset; cursor: pointer; }
+.plain .xr-table th[aria-sort] { color: var(--yellow); }
+.plain .xr-table th[aria-sort="descending"] button::after { content: " ↓"; }
+.plain .xr-table th[aria-sort="ascending"] button::after { content: " ↑"; }
+.plain .xr-table th button:focus-visible, .plain .xr-table .link:focus-visible { outline: 1px solid var(--yellow); }
+.plain .xr-table td { padding-block: 3px; }
+.plain .xr-table td.g { color: var(--green); }
+.plain .xr-table td.r { color: var(--red); }
+.plain .xr-table .link { all: unset; cursor: pointer; color: var(--fg); }
+.plain .xr-table .link:hover { color: var(--purple); text-decoration: underline; }
+.plain .xr-table tr.on td { background: var(--win-2); }
+.plain .xr-table tr.on .link { color: var(--purple); font-weight: 700; }
 .plain .notfound { font: 700 5rem/1 var(--f-ui); color: var(--purple); }
 .plain footer { border-top: 1px solid var(--line); padding-top: 14px; color: var(--dim); font-size: 0.9rem; display: grid; gap: 4px; }
 @media (max-width: 640px)

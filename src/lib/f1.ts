@@ -1,4 +1,5 @@
 // The F1Ratings export (server/f1/export.py) and helpers to show it. Pure, so it can be tested.
+import { esc } from "./esc";
 
 export interface F1Entry
 {
@@ -24,6 +25,17 @@ export interface F1Data
 
 export type F1View = "grid" | "all";
 export type F1Sort = "name" | "peak" | "now" | "delta";
+export type F1Set = "drivers" | "teams";
+
+// What `f1ratings [--teams] [--all-time] [--sort ...] [plot <name>]` asks the f1 window to show.
+export interface F1Options
+{
+        set?: F1Set;
+        view?: F1View;
+        sort?: F1Sort;
+        ascending?: boolean;
+        pick?: string;
+}
 
 export const F1_URL = "/data/f1.json";
 
@@ -130,4 +142,24 @@ export function chartGeometry(history: [string, number][], width: number, height
                 }
         }
         return { line, min, max, peak: [x(times[peakIndex]!), y(max)], years };
+}
+
+const CHART_W = 640;
+const CHART_H = 120;
+
+// The rating history as an inline SVG (styled by .xr in base.css), or a note when none was exported.
+export function chartSvg(e: F1Entry, noHistory: string): string
+{
+        const g = e.history ? chartGeometry(e.history, CHART_W, CHART_H) : null;
+        if (!g)
+        {
+                return "<p class=\"f\">" + esc(noHistory) + "</p>";
+        }
+        const ticks = g.years.map(([x, label]) => "<line x1=\"" + x.toFixed(1) + "\" y1=\"0\" x2=\"" + x.toFixed(1) + "\" y2=\"" + CHART_H + "\" class=\"grid\"/><text x=\"" + x.toFixed(1) + "\" y=\"" + (CHART_H + 16) + "\">" + label + "</text>").join("");
+        return "<svg class=\"xr\" viewBox=\"-46 -8 " + (CHART_W + 54) + " " + (CHART_H + 30) + "\" role=\"img\" aria-label=\"" + esc(e.name + ": " + g.min + "–" + g.max) + "\">"
+                + ticks
+                + "<text x=\"-6\" y=\"4\" class=\"v\">" + g.max + "</text><text x=\"-6\" y=\"" + CHART_H + "\" class=\"v\">" + g.min + "</text>"
+                + "<polyline points=\"" + g.line + "\"/>"
+                + "<circle cx=\"" + g.peak[0].toFixed(1) + "\" cy=\"" + g.peak[1].toFixed(1) + "\" r=\"3.5\"/>"
+                + "</svg>";
 }

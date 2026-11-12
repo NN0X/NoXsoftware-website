@@ -48,3 +48,10 @@ pre { margin: 0; font: inherit; white-space: pre; }
 .chart i b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); font-size: 0.8em; color: var(--yellow); }
 .chart-x { color: var(--faint); font-size: 0.85em; }
 .chart-x span { white-space: nowrap; }
+/* XRating history (F1Ratings), shared by the f1 window and the plain page */
+.xr { display: block; width: 100%; height: auto; overflow: visible; }
+.xr polyline { fill: none; stroke: var(--purple); stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.xr circle { fill: var(--yellow); }
+.xr .grid { stroke: var(--line); stroke-width: 1; }
+.xr text { fill: var(--faint); font: 12px var(--f-ui); text-anchor: middle; }
+.xr text.v { text-anchor: end; }

@@ -30,6 +30,7 @@ export function openLauncher(): void
                 ["zsh", spawnTerm],
                 ["htop", () => openSingle("htop", 1)],
                 ["nvim", () => openProject(null)],
+                ["f1ratings", () => openSingle("f1", 3)],
                 ["firefox", () => openSingle("firefox", 9)],
                 ...Object.keys(REPOS).filter((r) => !featured.includes(r)).map((r): [string, () => void] => [r, () => openProject(r)])
         ];
