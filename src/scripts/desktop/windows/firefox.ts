@@ -1,19 +1,15 @@
 // A small but real browser: tabs, history, an address bar and bookmarks. It renders about: pages and
 // noxsoftware.pl itself (the same content as the plain pages). Other sites refuse to be framed, exactly
 // as they would in a real iframe, so they get Firefox's own error page with an "open in new window" link.
-import { FEATURED, REPOS, S, data, el, meta, t, total, type Win } from "../core";
+import { FEATURED, REPOS, data, el, meta, t, total, type Win } from "../core";
 import { openProject, register } from "../wm";
 import { renderBar } from "../bar";
 import { esc } from "../../../lib/esc";
 import { normalizeUrl } from "../../../lib/url";
+import { findEgg } from "../../../data/eggs";
+import { eggFigure } from "../../egg";
 
 const SITE = "noxsoftware.pl";
-const EGGS: Record<string, [string, string]> = {
-        "c": ["C", "programinc.webm"],
-        "c++isthebest": ["C++ is the best", "c++slander.webm"],
-        "linux>windowsallday": ["Linux > Windows, all day", "linuxusers.mp4"],
-        "pythonistoobadforbeingthisuseful": ["Python is too bad for being this useful", "pythondeveloper.webm"]
-};
 
 interface Tab
 {
@@ -239,18 +235,16 @@ function render(body: HTMLDivElement, w: Win): void
                         box.append(row);
                         return m.name + " — NoXsoftware";
                 }
-                const egg = EGGS[decodeURIComponent(clean.slice(1)).replace(/^eggs\//, "")];
-                const vid = el("div", "vid");
+                const egg = findEgg(decodeURIComponent(clean));
                 if (egg)
                 {
-                        box.append(el("h1", "", egg[0]));
-                        vid.innerHTML = "▶ " + esc(egg[1]) + "<small>" + (S.lang === "pl" ? "tu gra film ze starej strony (przekodowany w kolejnym etapie)" : "the video from the old site plays here (re-encoded in a later phase)") + "</small>";
-                        box.append(vid, link("← noxsoftware.pl", SITE));
-                        return "NoXsoftware";
+                        box.append(el("h1", "", egg.title), eggFigure(egg, t("egg.unmute")), link("← noxsoftware.pl", SITE));
+                        return egg.title + " — NoXsoftware";
                 }
-                box.append(el("div", "big", "404"), el("p", "", t("site.notFound")));
-                vid.innerHTML = "¯\\_(ツ)_/¯<small>" + (S.lang === "pl" ? "tu zostaje gif z Pulp Fiction" : "the confused Pulp Fiction gif stays here") + "</small>";
-                box.append(vid, link("← noxsoftware.pl", SITE));
+                const gif = el("img", "meme");
+                gif.src = "/media/where.webp";
+                gif.alt = t("site.whereAlt");
+                box.append(el("div", "big", "404"), el("p", "", t("site.notFound")), gif, link("← noxsoftware.pl", SITE));
                 return "404 — NoXsoftware";
         }
 

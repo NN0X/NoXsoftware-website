@@ -7,6 +7,7 @@ import Footer from "./Footer.astro";
 <TopBar lang="en" path="/" />
 <div class="notfound">404</div>
 <p>{translate("en", "site.notFound")} <span lang="pl">/ {translate("pl", "site.notFound")}</span></p>
+<img class="meme" src="/media/where.webp" alt={translate("en", "site.whereAlt")} width="498" height="480" />
 <p class="muted">{translate("en", "site.notFoundSub")}</p>
 <ul>
         {PROJECTS.map((p) => <li><a href={pathFor("en", "/projects/" + p.slug + "/")}>{p.name}</a></li>)}

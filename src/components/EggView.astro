@@ -1,0 +1,32 @@
+---
+import type { Lang } from "../data/types";
+import type { Egg } from "../data/eggs";
+import { pathFor } from "../data/site";
+import { translate } from "../lib/i18n";
+import TopBar from "./TopBar.astro";
+import Footer from "./Footer.astro";
+
+interface Props
+{
+        lang: Lang;
+        egg: Egg;
+}
+
+const { lang, egg } = Astro.props;
+---
+<TopBar lang={lang} path={"/eggs/" + egg.slug + "/"} />
+<h1>{egg.title}</h1>
+<figure class="egg" data-egg>
+        <video src={egg.video} poster={egg.poster} aria-label={egg.title} autoplay muted loop playsinline controls></video>
+        <button type="button" class="unmute" hidden>🔇 {translate(lang, "egg.unmute")}</button>
+</figure>
+<p class="muted">{translate(lang, "egg.note")} <a href={pathFor(lang, "/")}>← noxsoftware.pl</a></p>
+<Footer lang={lang} />
+<script>
+        import { wireEgg } from "../scripts/egg";
+
+        for (const figure of document.querySelectorAll<HTMLElement>("[data-egg]"))
+        {
+                wireEgg(figure);
+        }
+</script>

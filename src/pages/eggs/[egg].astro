@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EggView from "../../components/EggView.astro";
+import { desktopData } from "../../data/site";
+import { EGGS } from "../../data/eggs";
+
+export function getStaticPaths()
+{
+        return EGGS.map((egg) => ({ params: { egg: egg.slug }, props: { egg } }));
+}
+
+const lang = "en";
+const { egg } = Astro.props;
+const path = "/eggs/" + egg.slug + "/";
+---
+<Layout lang={lang} title={egg.title + " — NoXsoftware"} description={egg.title} path={path} desktop={await desktopData(lang, undefined, { url: "noxsoftware.pl" + path })}>
+        <EggView lang={lang} egg={egg} />
+</Layout>

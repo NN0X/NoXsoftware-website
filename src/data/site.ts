@@ -52,7 +52,7 @@ export function repoOfSlug(slug: string): string | undefined
         return PROJECTS.find((p) => p.slug === slug)?.repo ?? Object.keys(SITE_REPOS).find((r) => r.toLowerCase() === slug);
 }
 
-export async function desktopData(lang: Lang, open?: string): Promise<DesktopData>
+export async function desktopData(lang: Lang, open?: string, extra: Partial<DesktopData> = {}): Promise<DesktopData>
 {
         const texts = await projectTexts();
         return {
@@ -61,6 +61,7 @@ export async function desktopData(lang: Lang, open?: string): Promise<DesktopDat
                 user: SNAPSHOT.user,
                 repos: SITE_REPOS,
                 projects: PROJECTS.map((p) => ({ ...p, text: texts[p.slug] as Record<Lang, ProjectText> })),
-                ...(open ? { open } : {})
+                ...(open ? { open } : {}),
+                ...extra
         };
 }

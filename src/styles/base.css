@@ -55,3 +55,9 @@ pre { margin: 0; font: inherit; white-space: pre; }
 .xr .grid { stroke: var(--line); stroke-width: 1; }
 .xr text { fill: var(--faint); font: 12px var(--f-ui); text-anchor: middle; }
 .xr text.v { text-anchor: end; }
+/* easter-egg videos and the error-page gifs, on the plain pages and in Firefox */
+.egg { position: relative; margin: 0; max-width: 800px; border-radius: 14px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.egg video { display: block; width: 100%; height: 100%; object-fit: contain; cursor: pointer; }
+.egg .unmute { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 0; border-radius: 10px; padding: 10px 20px; background: rgba(0, 0, 0, 0.55); color: #fff; font: 700 18px var(--f-ui); cursor: pointer; }
+.egg .unmute:hover, .egg .unmute:focus-visible { background: rgba(141, 82, 230, 0.85); outline: none; }
+.meme { display: block; width: min(100%, 360px); height: auto; }

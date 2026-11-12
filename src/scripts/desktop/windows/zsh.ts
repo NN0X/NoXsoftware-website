@@ -1419,11 +1419,11 @@ function render(body: HTMLDivElement, w: Win): void
                 S.booted = true;
                 print(prompt() + "neofetch");
                 neofetch();
-                if (data.notFound)
+                if (data.notFound || data.forbidden)
                 {
                         print(prompt() + "cd " + esc(location.pathname));
-                        print("cd: no such file or directory: " + esc(location.pathname), "r");
-                        print("404. " + runBtn("ls ~/projects", "ls ~/projects") + " " + runBtn("help", "help"), "d");
+                        print("cd: " + (data.forbidden ? "permission denied: " : "no such file or directory: ") + esc(location.pathname), "r");
+                        print((data.forbidden ? "403. noooo. " : "404. ") + runBtn("ls ~/projects", "ls ~/projects") + " " + runBtn("help", "help"), "d");
                         status = 1;
                         drawPrompt();
                 }

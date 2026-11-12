@@ -58,5 +58,8 @@ export interface DesktopData
         projects: (ProjectConfig & { text: Record<Lang, ProjectText> })[];
         open?: string;
         focus?: string;
+        // a noxsoftware.pl address to open in Firefox at boot (the easter-egg pages)
+        url?: string;
         notFound?: boolean;
+        forbidden?: boolean;
 }

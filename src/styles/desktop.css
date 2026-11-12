@@ -247,8 +247,6 @@
 .site p, .site ul { margin: 0; }
 .site ul { padding-left: 20px; }
 .site .muted { color: #a8a7b3; font-size: 13px; }
-.site .vid { aspect-ratio: 16 / 9; background: #000; border-radius: 10px; display: grid; place-items: center; color: #fff; font: 700 18px/1.4 var(--f-ui); text-align: center; padding: 20px; }
-.site .vid small { display: block; font-weight: 400; color: #a8a7b3; font-size: 13px; }
 .site .big { font: 700 64px/1 var(--f-ui); color: var(--purple); }
 .site .res { display: grid; gap: 2px; }
 
