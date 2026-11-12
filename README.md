@@ -23,6 +23,10 @@ npm run wasm      # rebuild the Brutus and Cicero demos (needs Emscripten on PAT
 npm run f1:fixture  # synthetic F1 ratings into public/data/ (needs Python 3.12+)
 ```
 
+Pushing to `master` deploys: `.github/workflows/deploy.yml` publishes the build and the Pi picks it
+up within five minutes ([`server/README.md`](server/README.md) has the Pi side). The easter-egg
+media in `public/media/` comes from the old site via `scripts/encode-media.sh` (needs ffmpeg).
+
 The in-browser demos are the real C++ from Brutus-Encryption and CiceroTokenizer, compiled with
 Emscripten at the commits pinned in `scripts/build-wasm.sh`. The output in `public/wasm/` is
 committed, so the site builds without Emscripten; `tests/wasm.test.ts` checks it against the
@@ -50,7 +54,8 @@ reachable it reuses the previous list, or takes one explicitly: `npm run data --
 | `src/lib/` | Code shared by both: highlighting, the activity chart, strings in both languages |
 | `wasm/` | Bindings that expose Brutus and Cicero to JavaScript |
 | `public/wasm/` | Generated: the compiled demos and Cicero's 2^16 dictionary |
-| `server/` | Runs on the Pi: the F1 ratings refresh (script, exporter, systemd units) |
+| `server/` | Runs on the Pi: the deploy pull script, the F1 ratings refresh and their systemd units |
+| `public/media/` | Generated: the re-encoded easter-egg videos and error-page memes |
 | `public/.htaccess` | Apache config: redirects from the old URLs, error page, cache headers |
 | `docs/overhaul/` | Design decisions and the original clickable mockup |
 

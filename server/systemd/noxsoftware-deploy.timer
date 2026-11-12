@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for a new build of noxsoftware.pl every five minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target

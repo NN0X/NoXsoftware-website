@@ -1,0 +1,57 @@
+name: Deploy
+
+# Builds master and publishes it as the assets of a single rolling "site" release. The Raspberry Pi
+# polls that release (server/deploy/pull.sh) and swaps the build in; nothing connects to the Pi.
+# Release downloads are public, so the Pi needs no token.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+
+      - name: Package
+        run: |
+          mkdir -p package out
+          cp -r dist package/site
+          cp -r server package/server
+          echo "$GITHUB_SHA" > package/VERSION
+          tar -czf out/site.tar.gz -C package .
+          (cd out && sha256sum site.tar.gz > site.tar.gz.sha256)
+          echo "$GITHUB_SHA" > out/VERSION
+          du -h out/site.tar.gz
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view site >/dev/null 2>&1 || gh release create site --target "$GITHUB_SHA" \
+            --title "Site build" --notes "The current build of noxsoftware.pl, picked up by the Pi. Replaced on every push to master." \
+            --prerelease --latest=false
+          # VERSION goes last: the Pi only looks at the archive once VERSION names a new commit
+          gh release upload site out/site.tar.gz out/site.tar.gz.sha256 --clobber
+          gh release upload site out/VERSION --clobber
+          git tag -f site "$GITHUB_SHA"
+          git push -f origin refs/tags/site
+          gh release edit site --title "Site build ${GITHUB_SHA::7}"

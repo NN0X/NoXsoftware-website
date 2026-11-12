@@ -1,0 +1,9 @@
+[Unit]
+Description=Deploy the newest build of noxsoftware.pl
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=noxsoftware
+ExecStart=/var/www/noxsoftware/current/server/deploy/pull.sh

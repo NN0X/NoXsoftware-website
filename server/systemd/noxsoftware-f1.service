@@ -7,7 +7,7 @@ After=network-online.target
 Type=oneshot
 User=noxsoftware
 Environment=F1_OUT=/var/www/noxsoftware-data/f1.json
-ExecStart=/opt/noxsoftware/server/f1/refresh.sh
+ExecStart=/var/www/noxsoftware/current/server/f1/refresh.sh
 Nice=10
 # the whole history is recomputed every time; on a Pi that takes a while
 TimeoutStartSec=2h
